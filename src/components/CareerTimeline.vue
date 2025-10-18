@@ -77,10 +77,17 @@ const isEventHighlighted = (event: TimelineEvent) => {
 
     <!-- Events -->
     <div class="space-y-12">
-      <div v-for="event in sortedEvents" :key="event.id" class="relative pl-16">
+      <div
+        v-for="event in sortedEvents"
+        :key="event.id"
+        :class="[
+          'relative transition-all duration-300',
+          isEventHighlighted(event) ? 'pl-16' : 'pl-8',
+        ]"
+      >
         <!-- Dot -->
         <div
-          class="absolute top-1.5 left-[0.1rem] size-7 rounded-full border-4 transition-all duration-100"
+          class="absolute top-1.5 left-[0.1rem] size-7 rounded-full border-4 transition-all duration-300"
           :class="[
             isEventHighlighted(event)
               ? 'ring-opacity-30 scale-100 ring-4 hover:scale-110'
@@ -98,16 +105,12 @@ const isEventHighlighted = (event: TimelineEvent) => {
         <!-- Content -->
         <div
           class="transition-all duration-300"
-          :class="[isEventHighlighted(event) ? 'scale-100 opacity-100' : 'scale-95 opacity-60']"
+          :class="[
+            isEventHighlighted(event)
+              ? 'translate-x-0 scale-100 transform opacity-100'
+              : '-translate-x-6 scale-80 transform opacity-60',
+          ]"
         >
-          <!-- Year -->
-          <!-- <div
-              class="mb-2 inline-block rounded px-2 py-1 font-mono text-xs transition-colors duration-300"
-              :style="{ color: personaStore.theme.primary }"
-            >
-              {{ event.year }}
-            </div> -->
-
           <!-- Title -->
           <h3
             class="mb-2 text-lg font-semibold text-gray-100"
