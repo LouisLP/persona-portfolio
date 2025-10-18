@@ -4,7 +4,8 @@ import { usePersonaStore } from '@/stores/persona'
 
 interface TimelineEvent {
   id: string
-  year: number
+  yearStart: number
+  yearEnd: number | null
   title: string
   description: string
   personas: string[]
@@ -15,50 +16,60 @@ const personaStore = usePersonaStore()
 const events: TimelineEvent[] = [
   {
     id: '1',
-    year: 2024,
-    title: 'Transitioned to Full-Time Development',
-    description: 'Made the leap from video production to software development',
-    personas: ['developer'],
+    yearStart: 2015,
+    yearEnd: null,
+    title: 'Creative Foundation',
+    description: 'Enrolled in Interactive Arts & Technology at SFU.',
+    personas: ['editor', 'designer'],
   },
   {
     id: '2',
-    year: 2023,
-    title: 'Started Learning Web Development',
-    description: 'Began coding journey with Vue.js and modern web technologies',
-    personas: ['developer', 'designer'],
+    yearStart: 2016,
+    yearEnd: 2017,
+    title: 'Esports & Entertainment',
+    description:
+      'Entered the esports industry as a Hearthstone writer for TempoStorm. Moved to LA as a Video Producer at Counter Logic Gaming and MSG Entertainment.',
+    personas: ['editor', 'designer'],
   },
   {
     id: '3',
-    year: 2022,
-    title: 'Freelance Editor Peak',
-    description: 'Managed 15+ concurrent projects for commercial clients',
-    personas: ['editor'],
+    yearStart: 2018,
+    yearEnd: 2021,
+    title: 'Senior Video Editor at Misfits Gaming',
+    description:
+      'Moved to Berlin to lead video editing and motion design for LEC, CDL, and OWL teams.',
+    personas: ['editor', 'designer'],
   },
   {
     id: '4',
-    year: 2021,
-    title: 'Started Motion Graphics Design',
-    description: 'Expanded into motion design and title sequences',
-    personas: ['editor', 'designer'],
+    yearStart: 2020,
+    yearEnd: 2023,
+    title: 'Transition to Computer Science',
+    description:
+      'Pursued formal CS education at SFU and UBC while building full-stack development skills. Published research on gamification.',
+    personas: ['developer'],
   },
   {
     id: '5',
-    year: 2020,
-    title: 'Freelance Video Editing Begins',
-    description: 'Started professional video editing with content creators',
-    personas: ['editor'],
+    yearStart: 2023,
+    yearEnd: 2025,
+    title: 'CS Degree & First Roles',
+    description:
+      'Graduated from UBC with BSc in Computer Science.  Returned to Berlin for work with Jobreel.',
+    personas: ['developer'],
   },
   {
     id: '6',
-    year: 2019,
-    title: 'Adobe Creative Suite Mastery',
-    description: 'Achieved deep proficiency across Premiere Pro and After Effects',
-    personas: ['editor', 'designer'],
+    yearStart: 2025,
+    yearEnd: null,
+    title: 'Robotic Turns',
+    description: 'Moved to Munich as a Software Engineer at Agile Robots.',
+    personas: ['developer'],
   },
 ]
 
 const sortedEvents = computed(() => {
-  return [...events].sort((a, b) => b.year - a.year)
+  return [...events].sort((a, b) => b.yearStart - a.yearStart)
 })
 
 const isEventHighlighted = (event: TimelineEvent) => {
@@ -76,7 +87,7 @@ const isEventHighlighted = (event: TimelineEvent) => {
     />
 
     <!-- Events -->
-    <div class="space-y-12">
+    <div class="space-y-6">
       <div
         v-for="event in sortedEvents"
         :key="event.id"
@@ -113,11 +124,13 @@ const isEventHighlighted = (event: TimelineEvent) => {
         >
           <!-- Year -->
           <div
-            class="mb-2 text-sm font-semibold"
-            :class="`font-${personaStore.theme.fontFamily}`"
+            class="mb-2 font-mono text-xs font-semibold lg:text-sm"
             :style="{ color: personaStore.theme.accent }"
           >
-            {{ event.year }}
+            {{ event.yearStart
+            }}<span v-if="event.yearEnd"
+              ><span class="px-1 opacity-40">-</span>{{ event.yearEnd }}</span
+            >
           </div>
 
           <!-- Title -->
