@@ -59,11 +59,18 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
   scrollBehavior(to, from, savedPosition) {
+    // If there's a saved position (browser back/forward), use it
     if (savedPosition) {
       return savedPosition
-    } else {
-      return { top: 0, behavior: 'smooth' }
     }
+
+    // If switching between personas, maintain current scroll position
+    if (to.meta.persona && from.meta.persona && to.meta.persona !== from.meta.persona) {
+      return false // Prevents any scroll behavior change
+    }
+
+    // For other navigation, scroll to top
+    return { top: 0, behavior: 'smooth' }
   },
 })
 
