@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import DesignerOverlay from '@/components/Designer/DesignerOverlay.vue'
+import DeveloperOverlay from '@/components/Developer/DeveloperOverlay.vue'
+import EditorOverlay from '@/components/Editor/EditorOverlay.vue'
 import { usePersonaStore } from '@/stores/persona'
 
 const personaStore = usePersonaStore()
@@ -13,6 +16,11 @@ const personaStore = usePersonaStore()
     <div
       :class="['absolute inset-0 opacity-20', `bg-gradient-to-br ${personaStore.theme.gradient}`]"
     />
+
+    <!-- Persona-specific overlays -->
+    <DeveloperOverlay v-if="personaStore.currentPersona === 'developer'" />
+    <EditorOverlay v-if="personaStore.currentPersona === 'editor'" />
+    <DesignerOverlay v-if="personaStore.currentPersona === 'designer'" />
 
     <!-- Content -->
     <div class="relative z-10 mx-auto max-w-4xl px-6 text-center">
