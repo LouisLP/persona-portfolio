@@ -7,9 +7,11 @@ const personaStore = usePersonaStore()
   <!-- Editor: Film strip on sides -->
 
   <!-- Part 1: LEFT -->
-  <aside class="pointer-events-none absolute inset-y-0 left-0 w-6 opacity-5 sm:w-8 md:w-12">
+  <aside
+    class="pointer-events-none absolute inset-y-0 left-0 w-6 animate-bounce opacity-5 sm:w-8 md:w-12"
+  >
     <!-- Left film strip -->
-    <div class="h-full w-full" :style="{ backgroundColor: personaStore.theme.accent }">
+    <div class="h-[200rem] w-full" :style="{ backgroundColor: personaStore.theme.accent }">
       <div
         class="h-full w-full"
         :style="{
@@ -20,9 +22,11 @@ const personaStore = usePersonaStore()
   </aside>
 
   <!-- Part 2: RIGHT -->
-  <aside class="pointer-events-none absolute inset-y-0 right-0 w-6 opacity-5 sm:w-8 md:w-12">
+  <aside
+    class="pointer-events-none absolute inset-y-0 right-0 w-6 animate-bounce opacity-5 sm:w-8 md:w-12"
+  >
     <!-- Right film strip -->
-    <div class="h-full w-full" :style="{ backgroundColor: personaStore.theme.accent }">
+    <div class="h-[200rem] w-full" :style="{ backgroundColor: personaStore.theme.accent }">
       <div
         class="h-full w-full"
         :style="{
