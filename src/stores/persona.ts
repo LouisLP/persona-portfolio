@@ -68,7 +68,7 @@ const content: Record<PersonaType, PersonaContent> = {
     title: 'Designer',
     tagline: 'Creating Beautiful Experiences',
     description:
-      'Went to university for interactive arts and technology, bringing a creative user-centric eye to every facet of work.',
+      'Went to university for interactive arts and technology, bringing a creative user-centric eye to every future facet of work.',
     skills: ['UI/UX Design', 'Figma', 'Design Systems', 'Typography', 'Prototyping'],
   },
   developer: {
