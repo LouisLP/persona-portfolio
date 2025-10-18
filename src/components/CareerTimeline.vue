@@ -67,61 +67,59 @@ const isEventHighlighted = (event: TimelineEvent) => {
 </script>
 
 <template>
-  <div class="mx-auto max-w-2xl px-6 py-20">
-    <!-- Timeline -->
-    <div class="relative">
-      <!-- Vertical line -->
-      <div
-        class="absolute top-0 bottom-0 left-[15px] w-0.5 transition-colors duration-500"
-        :style="{ backgroundColor: personaStore.theme.accent }"
-      />
+  <!-- Timeline -->
+  <div class="relative">
+    <!-- Vertical line -->
+    <div
+      class="absolute top-0 bottom-0 left-[15px] w-0.5 transition-colors duration-500"
+      :style="{ backgroundColor: personaStore.theme.accent }"
+    />
 
-      <!-- Events -->
-      <div class="space-y-12">
-        <div v-for="event in sortedEvents" :key="event.id" class="relative pl-16">
-          <!-- Dot -->
-          <div
-            class="absolute top-1.5 left-[0.1rem] size-7 rounded-full border-4 transition-all duration-100"
-            :class="[
-              isEventHighlighted(event)
-                ? 'ring-opacity-30 scale-100 ring-4 hover:scale-110'
-                : 'scale-50',
-            ]"
-            :style="{
-              backgroundColor: isEventHighlighted(event)
-                ? personaStore.theme.primary
-                : personaStore.theme.accent,
-              borderColor: '#0a0a0a',
-              '--tw-ring-color': personaStore.theme.accent,
-            }"
-          />
+    <!-- Events -->
+    <div class="space-y-12">
+      <div v-for="event in sortedEvents" :key="event.id" class="relative pl-16">
+        <!-- Dot -->
+        <div
+          class="absolute top-1.5 left-[0.1rem] size-7 rounded-full border-4 transition-all duration-100"
+          :class="[
+            isEventHighlighted(event)
+              ? 'ring-opacity-30 scale-100 ring-4 hover:scale-110'
+              : 'scale-50',
+          ]"
+          :style="{
+            backgroundColor: isEventHighlighted(event)
+              ? personaStore.theme.primary
+              : personaStore.theme.accent,
+            borderColor: '#0a0a0a',
+            '--tw-ring-color': personaStore.theme.accent,
+          }"
+        />
 
-          <!-- Content -->
-          <div
-            class="transition-all duration-300"
-            :class="[isEventHighlighted(event) ? 'scale-100 opacity-100' : 'scale-95 opacity-60']"
-          >
-            <!-- Year -->
-            <!-- <div
+        <!-- Content -->
+        <div
+          class="transition-all duration-300"
+          :class="[isEventHighlighted(event) ? 'scale-100 opacity-100' : 'scale-95 opacity-60']"
+        >
+          <!-- Year -->
+          <!-- <div
               class="mb-2 inline-block rounded px-2 py-1 font-mono text-xs transition-colors duration-300"
               :style="{ color: personaStore.theme.primary }"
             >
               {{ event.year }}
             </div> -->
 
-            <!-- Title -->
-            <h3
-              class="mb-2 text-lg font-semibold text-gray-100"
-              :class="`font-${personaStore.theme.fontFamily}`"
-            >
-              {{ event.title }}
-            </h3>
+          <!-- Title -->
+          <h3
+            class="mb-2 text-lg font-semibold text-gray-100"
+            :class="`font-${personaStore.theme.fontFamily}`"
+          >
+            {{ event.title }}
+          </h3>
 
-            <!-- Description -->
-            <p class="text-sm leading-relaxed text-gray-400">
-              {{ event.description }}
-            </p>
-          </div>
+          <!-- Description -->
+          <p class="text-sm leading-relaxed text-gray-400">
+            {{ event.description }}
+          </p>
         </div>
       </div>
     </div>
