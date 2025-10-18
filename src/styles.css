@@ -2,11 +2,11 @@
 
 /* Font Face Declarations */
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'Archivo';
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
-  src: url('/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf') format('truetype');
+  src: url('/fonts/Archivo_Black/ArchivoBlack-Regular.ttf') format('truetype');
 }
 
 @font-face {
@@ -26,7 +26,7 @@
 }
 
 @theme {
-  --font-designer: 'Roboto', sans-serif;
+  --font-designer: 'Archivo', sans-serif;
 }
 
 @theme {
