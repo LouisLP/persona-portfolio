@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import CareerTimeline from '@/components/CareerTimeline.vue'
 import { usePersonaStore } from '@/stores/persona'
 
 const personaStore = usePersonaStore()
@@ -40,17 +41,8 @@ const motionGraphics = [
 
 <template>
   <div class="container mx-auto space-y-20 px-6 py-16">
-    <!-- Editor Introduction -->
-    <section class="mx-auto max-w-4xl text-center">
-      <h2 class="font-editor mb-6 text-4xl font-bold" :style="{ color: personaStore.theme.accent }">
-        Motion Graphics & Video Editing
-      </h2>
-      <p class="text-lg leading-relaxed opacity-90" :style="{ color: personaStore.theme.text }">
-        From 2017-2021, I worked as a professional video editor and motion designer in the esports
-        industry, creating content for premier teams across Los Angeles and Berlin. Here's a
-        showcase of motion graphics work.
-      </p>
-    </section>
+    <!-- Timeline -->
+    <CareerTimeline />
 
     <!-- Motion Graphics Gallery -->
     <section>
