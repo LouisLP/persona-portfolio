@@ -81,9 +81,11 @@ const isEventHighlighted = (event: TimelineEvent) => {
         <div v-for="event in sortedEvents" :key="event.id" class="relative pl-16">
           <!-- Dot -->
           <div
+            class="absolute top-1.5 left-[0.1rem] size-7 rounded-full border-4 transition-all duration-100"
             :class="[
-              'absolute top-1.5 left-[0.1rem] size-7 rounded-full border-4 transition-all duration-300',
-              isEventHighlighted(event) ? 'ring-opacity-30 scale-100 ring-4' : 'scale-50',
+              isEventHighlighted(event)
+                ? 'ring-opacity-30 scale-100 ring-4 hover:scale-110'
+                : 'scale-50',
             ]"
             :style="{
               backgroundColor: isEventHighlighted(event)
@@ -96,10 +98,8 @@ const isEventHighlighted = (event: TimelineEvent) => {
 
           <!-- Content -->
           <div
-            :class="[
-              'transition-all duration-300',
-              isEventHighlighted(event) ? 'scale-100 opacity-100' : 'scale-95 opacity-60',
-            ]"
+            class="transition-all duration-300"
+            :class="[isEventHighlighted(event) ? 'scale-100 opacity-100' : 'scale-95 opacity-60']"
           >
             <!-- Year -->
             <!-- <div
