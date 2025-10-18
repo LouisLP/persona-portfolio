@@ -9,20 +9,15 @@ const personaStore = usePersonaStore()
 <template>
   <div class="container mx-auto space-y-20 px-6 py-16">
     <!-- Blurb & Timeline -->
-    <section class="grid grid-cols-1 items-center gap-12 lg:grid-cols-5">
-      <!-- Timeline Section -->
-      <div class="lg:col-span-2">
-        <CareerTimeline />
-      </div>
-
+    <section class="grid grid-cols-1 items-center gap-12 md:grid-cols-5">
       <!-- Blurb Section -->
-      <div class="space-y-6 lg:col-span-2">
+      <div class="space-y-6 md:col-span-3">
         <h2
-          class="text-3xl font-bold"
+          class="text-3xl font-bold md:text-4xl"
           :class="`font-${personaStore.currentPersona}`"
           :style="{ color: personaStore.theme.accent }"
         >
-          My Developer Journey
+          My Developing Journey
         </h2>
 
         <div class="space-y-4 text-lg leading-relaxed" :style="{ color: personaStore.theme.text }">
@@ -44,6 +39,11 @@ const personaStore = usePersonaStore()
             web technologies.
           </p>
         </div>
+      </div>
+
+      <!-- Timeline Section -->
+      <div class="md:col-span-2">
+        <CareerTimeline />
       </div>
     </section>
 
