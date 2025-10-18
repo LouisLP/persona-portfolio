@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { usePersonaStore } from '@/stores/persona'
 const personaStore = usePersonaStore()
+
+const LINE_COUNT = 50
 </script>
 
 <template>
@@ -10,7 +12,7 @@ const personaStore = usePersonaStore()
       class="flex h-full flex-col justify-start pt-8 font-mono text-xs leading-6"
       :style="{ color: personaStore.theme.accent }"
     >
-      <div v-for="n in 50" :key="n" class="px-2">{{ n.toString().padStart(2, '0') }}</div>
+      <div v-for="n in LINE_COUNT" :key="n" class="px-2">{{ n.toString().padStart(2, '0') }}</div>
     </div>
   </aside>
 </template>
