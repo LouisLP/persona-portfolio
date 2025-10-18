@@ -19,7 +19,8 @@ const events: TimelineEvent[] = [
     yearStart: 2015,
     yearEnd: null,
     title: 'Creative Foundation',
-    description: 'Enrolled in Interactive Arts & Technology at SFU.',
+    description:
+      'Enrolled in Interactive Arts & Technology at SFU. Started as Hearthstone writer for TempoStorm.',
     personas: ['editor', 'designer'],
   },
   {
@@ -27,8 +28,7 @@ const events: TimelineEvent[] = [
     yearStart: 2016,
     yearEnd: 2017,
     title: 'Esports & Entertainment',
-    description:
-      'Entered the esports industry as a Hearthstone writer for TempoStorm. Moved to LA as a Video Producer at Counter Logic Gaming and MSG Entertainment.',
+    description: 'Video Producer at Counter Logic Gaming and Madison Square Garden Entertainment.',
     personas: ['editor', 'designer'],
   },
   {
@@ -55,15 +55,16 @@ const events: TimelineEvent[] = [
     yearEnd: 2025,
     title: 'CS Degree & First Roles',
     description:
-      'Graduated from UBC with BSc in Computer Science.  Returned to Berlin for work with Jobreel.',
+      'Graduated from UBC with BSc in Computer Science. Returned to Berlin for work at Jobreel.',
     personas: ['developer'],
   },
   {
     id: '6',
     yearStart: 2025,
     yearEnd: null,
-    title: 'Robotic Turns',
-    description: 'Moved to Munich as a Software Engineer at Agile Robots.',
+    title: 'Professional Niche',
+    description:
+      'Moved to Munich as a Software Engineer at Agile Robots, building a robotics IDE while specializing in frontend development.',
     personas: ['developer'],
   },
 ]
