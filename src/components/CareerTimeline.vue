@@ -111,6 +111,15 @@ const isEventHighlighted = (event: TimelineEvent) => {
               : '-translate-x-6 scale-80 transform opacity-60',
           ]"
         >
+          <!-- Year -->
+          <div
+            class="mb-2 text-sm font-semibold"
+            :class="`font-${personaStore.theme.fontFamily}`"
+            :style="{ color: personaStore.theme.accent }"
+          >
+            {{ event.year }}
+          </div>
+
           <!-- Title -->
           <h3
             class="mb-2 text-lg font-semibold text-gray-100"
