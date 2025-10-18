@@ -90,9 +90,9 @@ export const usePersonaStore = defineStore('persona', () => {
   const personaContent = computed(() => content[currentPersona.value])
 
   const allPersonas = computed(() => [
+    { type: 'developer' as PersonaType, label: 'Developer', icon: '💻' },
     { type: 'editor' as PersonaType, label: 'Editor', icon: '🎬' },
     { type: 'designer' as PersonaType, label: 'Designer', icon: '🎨' },
-    { type: 'developer' as PersonaType, label: 'Developer', icon: '💻' },
   ])
 
   // Actions
