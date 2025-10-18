@@ -1,0 +1,38 @@
+@import 'tailwindcss';
+
+/* Font Face Declarations */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Domine';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/Domine/Domine-VariableFont_wght.ttf') format('truetype');
+}
+
+@theme {
+  --font-designer: 'Roboto', sans-serif;
+}
+
+@theme {
+  --font-developer: 'Fira Code', monospace;
+}
+
+@theme {
+  --font-editor: 'Domine', serif;
+}
