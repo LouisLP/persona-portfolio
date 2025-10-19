@@ -20,7 +20,7 @@ const events: TimelineEvent[] = [
     yearEnd: null,
     title: 'Creative Foundation',
     description:
-      'Enrolled in Interactive Arts & Technology at SFU. Started as Hearthstone writer for TempoStorm.',
+      'Enrolled in Interactive Arts & Technology at SFU in Vancouver. Entered the esports space as a Hearthstone writer for TempoStorm.',
     personas: ['editor', 'designer'],
   },
   {
@@ -28,7 +28,8 @@ const events: TimelineEvent[] = [
     yearStart: 2016,
     yearEnd: 2017,
     title: 'Esports & Entertainment',
-    description: 'Video Producer at Counter Logic Gaming and Madison Square Garden Entertainment.',
+    description:
+      'Moved to Los Angeles as a Video Producer for Counter Logic Gaming and Madison Square Garden Entertainment.',
     personas: ['editor', 'designer'],
   },
   {
@@ -46,7 +47,7 @@ const events: TimelineEvent[] = [
     yearEnd: 2023,
     title: 'Transition to Computer Science',
     description:
-      'Pursued formal CS education at SFU and UBC while building full-stack development skills. Published research on gamification.',
+      'Pursued formal CS education while building full-stack development skills. Published research on gamification.',
     personas: ['developer'],
   },
   {
@@ -55,7 +56,7 @@ const events: TimelineEvent[] = [
     yearEnd: 2025,
     title: 'CS Degree & First Roles',
     description:
-      'Graduated from UBC with BSc in Computer Science. Returned to Berlin for work at Jobreel.',
+      'Returned to Berlin for work as a full-stack developer for Jobreel after graduating from UBC with a BSc in Computer Science.',
     personas: ['developer'],
   },
   {
@@ -64,7 +65,7 @@ const events: TimelineEvent[] = [
     yearEnd: null,
     title: 'Professional Niche',
     description:
-      'Moved to Munich as a Software Engineer at Agile Robots, building a robotics IDE while specializing in frontend development.',
+      'Moved to Munich as a software engineer at Agile Robots SE, building a robotics IDE while specializing in frontend development.',
     personas: ['developer'],
   },
 ]
