@@ -120,7 +120,7 @@ const isEventHighlighted = (event: TimelineEvent) => {
           :class="[
             isEventHighlighted(event)
               ? 'translate-x-0 scale-100 transform opacity-100'
-              : '-translate-x-6 scale-80 transform opacity-60',
+              : '-translate-x-6 scale-80 transform opacity-25',
           ]"
         >
           <!-- Year -->
