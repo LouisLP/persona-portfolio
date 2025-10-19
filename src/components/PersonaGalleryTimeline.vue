@@ -16,22 +16,22 @@ const personaStore = usePersonaStore()
 // Photo sets for each persona
 const photoSets = {
   editor: [
-    { imagePath: '/images/editor/video-edit-1.jpg', rotation: -4 },
-    { imagePath: '/images/editor/motion-graphics-1.jpg', rotation: 2 },
-    { imagePath: '/images/editor/color-grade-1.jpg', rotation: -1 },
-    { imagePath: '/images/editor/final-cut-1.jpg', rotation: 3 },
+    { imagePath: '/polaroid_photos/editor/CLG_Camera.jpg', rotation: -4 },
+    { imagePath: '/polaroid_photos/editor/CLG_Editing_Station_02.jpg', rotation: 2 },
+    { imagePath: '/polaroid_photos/editor/LEC_Studio_Room.jpg', rotation: -1 },
+    { imagePath: '/polaroid_photos/editor/CLG_On_Stage.jpg', rotation: 3 },
   ],
   designer: [
-    { imagePath: '/images/designer/ui-design-1.jpg', rotation: -4 },
-    { imagePath: '/images/designer/brand-identity-1.jpg', rotation: 2 },
-    { imagePath: '/images/designer/web-design-1.jpg', rotation: -1 },
-    { imagePath: '/images/designer/logo-design-1.jpg', rotation: 3 },
+    { imagePath: '/polaroid_photos/designer/TwitchCon_2017.jpg', rotation: -4 },
+    { imagePath: '/polaroid_photos/designer/CLG_Jersey.jpg', rotation: 2 },
+    { imagePath: '/polaroid_photos/designer/Fidget_Head.jpg', rotation: -1 },
+    { imagePath: '/polaroid_photos/designer/Writing_On_Table.jpg', rotation: 3 },
   ],
   developer: [
-    { imagePath: '/images/developer/code-screen-1.jpg', rotation: -4 },
-    { imagePath: '/images/developer/ide-setup-1.jpg', rotation: 2 },
-    { imagePath: '/images/developer/terminal-1.jpg', rotation: -1 },
-    { imagePath: '/images/developer/deployment-1.jpg', rotation: 3 },
+    { imagePath: '/polaroid_photos/developer/code-screen-1.jpg', rotation: -4 },
+    { imagePath: '/polaroid_photos/developer/ide-setup-1.jpg', rotation: 2 },
+    { imagePath: '/polaroid_photos/developer/terminal-1.jpg', rotation: -1 },
+    { imagePath: '/polaroid_photos/developer/Covid_Setup_Berlin.jpg', rotation: 3 },
   ],
 }
 
