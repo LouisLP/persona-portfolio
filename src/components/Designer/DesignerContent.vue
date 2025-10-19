@@ -37,7 +37,9 @@ const photos = [
         </div>
 
         <!-- Photo Container -->
-        <div class="flex w-full -space-x-40 py-8 md:-translate-x-50 md:-space-x-40">
+        <div
+          class="flex -translate-x-50 -space-x-20 py-8 md:-space-x-40 lg:-translate-x-130 xl:-translate-x-100 2xl:-translate-x-60"
+        >
           <PolaroidPhoto
             v-for="(photo, index) in photos"
             :key="index"
