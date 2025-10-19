@@ -12,7 +12,7 @@ const props = withDefaults(defineProps<Props>(), {
 <template>
   <!-- Polaroid photo container -->
   <figure
-    class="flex h-80 w-70 items-center justify-center bg-gray-100 pb-10 shadow-lg lg:h-110 lg:w-100"
+    class="flex h-80 w-70 items-center justify-center bg-gray-100 pb-10 shadow-lg transition-transform hover:-translate-y-3 lg:h-110 lg:w-100"
     :style="{ transform: `rotate(${props.rotation}deg)` }"
   >
     <!-- Image container -->
