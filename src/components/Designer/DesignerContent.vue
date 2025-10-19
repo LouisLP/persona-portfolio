@@ -15,20 +15,23 @@ const photos = [
 </script>
 
 <template>
-  <div class="container mx-auto space-y-20 px-6 py-16">
+  <div class="mx-auto space-y-20 py-16 md:container">
     <!-- Blurb & Timeline -->
     <section class="grid grid-cols-1 items-center gap-12 md:grid-cols-5">
       <!-- Blurb Section -->
       <div class="col-span-5 space-y-6 lg:col-span-3">
         <h2
-          class="text-3xl font-bold md:text-4xl"
+          class="px-6 text-3xl font-bold md:text-4xl"
           :class="`font-${personaStore.currentPersona}`"
           :style="{ color: personaStore.theme.accent }"
         >
           My Designing Journey
         </h2>
 
-        <div class="space-y-4 text-lg leading-relaxed" :style="{ color: personaStore.theme.text }">
+        <div
+          class="space-y-4 px-6 text-lg leading-relaxed"
+          :style="{ color: personaStore.theme.text }"
+        >
           <p>
             Design is where creativity meets strategy. My journey has taken me from traditional
             graphic design through digital interfaces, always focusing on creating experiences that
@@ -38,7 +41,7 @@ const photos = [
 
         <!-- Photo Container -->
         <div
-          class="flex -translate-x-50 -space-x-20 py-8 md:-space-x-40 lg:-translate-x-130 xl:-translate-x-100 2xl:-translate-x-60"
+          class="flex items-center justify-center -space-x-40 overflow-x-hidden py-8 md:-translate-x-10 md:-space-x-20 md:overflow-x-visible lg:-translate-x-60 lg:-space-x-40 xl:-translate-x-50 2xl:-translate-x-30"
         >
           <PolaroidPhoto
             v-for="(photo, index) in photos"

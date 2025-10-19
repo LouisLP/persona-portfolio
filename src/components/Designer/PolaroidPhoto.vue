@@ -12,11 +12,11 @@ const props = withDefaults(defineProps<Props>(), {
 <template>
   <!-- Polaroid photo container -->
   <figure
-    class="flex h-80 w-70 items-center justify-center bg-gray-100 pb-10 shadow-lg md:h-110 md:w-100"
+    class="flex h-80 w-70 items-center justify-center bg-gray-100 pb-10 shadow-lg lg:h-110 lg:w-100"
     :style="{ transform: `rotate(${props.rotation}deg)` }"
   >
     <!-- Image container -->
-    <div class="size-64 overflow-hidden bg-gray-800 md:size-90">
+    <div class="size-64 overflow-hidden bg-gray-800 lg:size-90">
       <img :src="props.imagePath" :alt="'Polaroid photo'" class="size-full object-cover" />
     </div>
   </figure>
