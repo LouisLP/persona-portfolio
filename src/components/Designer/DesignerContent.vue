@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import CareerTimeline from '@/components/CareerTimeline.vue'
-import PolaroidPhoto from '@/components/Designer/PolaroidPhoto.vue'
+import PolaroidPhoto from '@/components/PolaroidPhoto.vue'
 import { usePersonaStore } from '@/stores/persona'
 
 const personaStore = usePersonaStore()
