@@ -2,7 +2,7 @@
 import CareerTimeline from '@/components/CareerTimeline.vue'
 import PolaroidPhoto from '@/components/PolaroidPhoto.vue'
 import { usePersonaStore } from '@/stores/persona'
-import { computed } from 'vue'
+import { computed, ref, onMounted, onUnmounted } from 'vue'
 
 interface Props {
   title: string
@@ -12,6 +12,22 @@ interface Props {
 defineProps<Props>()
 
 const personaStore = usePersonaStore()
+
+// Screen size tracking
+const screenWidth = ref(0)
+
+const updateScreenWidth = () => {
+  screenWidth.value = window.innerWidth
+}
+
+onMounted(() => {
+  updateScreenWidth()
+  window.addEventListener('resize', updateScreenWidth)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', updateScreenWidth)
+})
 
 // Photo sets for each persona
 const photoSets = {
@@ -35,9 +51,11 @@ const photoSets = {
   ],
 }
 
-// Computed property to get photos based on current persona
+// Computed property to get photos based on current persona and screen size
 const currentPhotos = computed(() => {
-  return photoSets[personaStore.currentPersona] || photoSets.designer
+  const photos = photoSets[personaStore.currentPersona] || photoSets.designer
+  // Show only last 3 photos on smaller screens (below md breakpoint)
+  return screenWidth.value < 768 ? photos.slice(-3) : photos
 })
 </script>
 
