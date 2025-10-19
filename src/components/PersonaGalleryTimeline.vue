@@ -16,7 +16,7 @@ const personaStore = usePersonaStore()
 // Photo sets for each persona
 const photoSets = {
   editor: [
-    { imagePath: '/images/editor/video-edit-1.jpg', rotation: -3 },
+    { imagePath: '/images/editor/video-edit-1.jpg', rotation: -4 },
     { imagePath: '/images/editor/motion-graphics-1.jpg', rotation: 2 },
     { imagePath: '/images/editor/color-grade-1.jpg', rotation: -1 },
     { imagePath: '/images/editor/final-cut-1.jpg', rotation: 3 },
@@ -24,14 +24,14 @@ const photoSets = {
   designer: [
     { imagePath: '/images/designer/ui-design-1.jpg', rotation: -4 },
     { imagePath: '/images/designer/brand-identity-1.jpg', rotation: 2 },
-    { imagePath: '/images/designer/web-design-1.jpg', rotation: -2 },
+    { imagePath: '/images/designer/web-design-1.jpg', rotation: -1 },
     { imagePath: '/images/designer/logo-design-1.jpg', rotation: 3 },
   ],
   developer: [
-    { imagePath: '/images/developer/code-screen-1.jpg', rotation: -3 },
-    { imagePath: '/images/developer/ide-setup-1.jpg', rotation: 1 },
-    { imagePath: '/images/developer/terminal-1.jpg', rotation: -2 },
-    { imagePath: '/images/developer/deployment-1.jpg', rotation: 4 },
+    { imagePath: '/images/developer/code-screen-1.jpg', rotation: -4 },
+    { imagePath: '/images/developer/ide-setup-1.jpg', rotation: 2 },
+    { imagePath: '/images/developer/terminal-1.jpg', rotation: -1 },
+    { imagePath: '/images/developer/deployment-1.jpg', rotation: 3 },
   ],
 }
 
