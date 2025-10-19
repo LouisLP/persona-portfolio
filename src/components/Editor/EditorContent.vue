@@ -42,7 +42,7 @@ const motionGraphics = [
 <template>
   <PersonaGalleryTimeline
     title="My Editing Journey"
-    description="Video editing and motion graphics have been my creative foundation. From cinematic storytelling to brand identity animation, I've crafted visual narratives that engage audiences and communicate powerful messages across digital platforms."
+    description="I've been editing since I was 10, starting with YouTube guides and eventually transitioning into professional video and motion design work for major esports organizations. That long history of creative storytelling through video gives me a deep intuition for pacing, narrative, and visual impact."
   />
 
   <!-- Motion Graphics Gallery -->

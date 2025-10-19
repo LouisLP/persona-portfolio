@@ -28,10 +28,10 @@ const photoSets = {
     { imagePath: '/polaroid_photos/designer/Writing_On_Table.jpg', rotation: 3 },
   ],
   developer: [
-    { imagePath: '/polaroid_photos/developer/code-screen-1.jpg', rotation: -4 },
-    { imagePath: '/polaroid_photos/developer/ide-setup-1.jpg', rotation: 2 },
-    { imagePath: '/polaroid_photos/developer/terminal-1.jpg', rotation: -1 },
-    { imagePath: '/polaroid_photos/developer/Covid_Setup_Berlin.jpg', rotation: 3 },
+    { imagePath: '/polaroid_photos/developer/Timbits.jpg', rotation: -4 },
+    { imagePath: '/polaroid_photos/developer/Japan.jpg', rotation: 2 },
+    { imagePath: '/polaroid_photos/developer/SFU.jpg', rotation: -1 },
+    { imagePath: '/polaroid_photos/developer/Jobreel_Photo.jpg', rotation: 3 },
   ],
 }
 

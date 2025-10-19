@@ -6,7 +6,7 @@ import CodeBlock from '@/components/Developer/CodeBlock.vue'
 <template>
   <PersonaGalleryTimeline
     title="My Developer Journey"
-    description="As a developer, my journey has been marked by continuous learning and adaptation. What started as curiosity about how things work has evolved into a passion for building user-centric applications with clean, efficient code."
+    description="I'm a full-stack developer with a focus toward frontend work, where I can bridge creative and technical thinking to build experiences that feel intuitive for both users and developers. I'm passionate about crafting interfaces that are thoughtful to use and maintainable to build."
   />
 
   <!-- Code intro -->

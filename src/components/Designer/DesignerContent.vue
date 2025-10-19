@@ -5,6 +5,6 @@ import PersonaGalleryTimeline from '@/components/PersonaGalleryTimeline.vue'
 <template>
   <PersonaGalleryTimeline
     title="My Design Journey"
-    description="Design is where creativity meets strategy. My journey has taken me from traditional graphic design through digital interfaces, always focusing on creating experiences that resonate with users and tell compelling visual stories."
+    description="My foundation in Interactive Arts & Technology shaped how I approach design as a holistic process, which I deepened through years of video editing and motion design work. Now I use my design tools to think through the complete user journey, placing myself in the user's, viewer's, or client's shoes."
   />
 </template>
