@@ -17,7 +17,7 @@ const personaStore = usePersonaStore()
 const photoSets = {
   editor: [
     { imagePath: '/polaroid_photos/editor/CLG_Camera.jpg', rotation: -4 },
-    { imagePath: '/polaroid_photos/editor/CLG_Editing_Station_02.jpg', rotation: 2 },
+    { imagePath: '/polaroid_photos/editor/Covid_Setup_Berlin.jpg', rotation: 2 },
     { imagePath: '/polaroid_photos/editor/LEC_Studio_Room.jpg', rotation: -1 },
     { imagePath: '/polaroid_photos/editor/CLG_On_Stage.jpg', rotation: 3 },
   ],
