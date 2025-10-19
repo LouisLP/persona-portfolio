@@ -34,7 +34,11 @@ const personaStore = usePersonaStore()
         <div
           :class="[
             `bg-gradient-to-r ${personaStore.theme.gradient}`,
-            `font-${personaStore.theme.fontFamily}`,
+            {
+              'font-designer': personaStore.currentPersona === 'designer',
+              'font-developer': personaStore.currentPersona === 'developer',
+              'font-editor': personaStore.currentPersona === 'editor',
+            },
           ]"
           class="mx-auto w-fit rounded-2xl px-4"
         >
