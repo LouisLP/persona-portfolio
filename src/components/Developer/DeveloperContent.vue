@@ -13,4 +13,9 @@ import CodeBlock from '@/components/Developer/CodeBlock.vue'
   <section class="flex justify-center">
     <CodeBlock />
   </section>
+
+  <!-- WIP -->
+  <section class="py-16 text-center opacity-70">
+    <p class="text-lg italic">More developer content coming soon! Stay tuned.</p>
+  </section>
 </template>

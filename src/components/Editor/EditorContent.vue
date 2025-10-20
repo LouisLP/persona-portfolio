@@ -66,4 +66,9 @@ const motionGraphics = [
       </div>
     </div>
   </section>
+
+  <!-- WIP -->
+  <section class="py-16 text-center opacity-70">
+    <p class="text-lg italic">More editor content coming soon! Stay tuned.</p>
+  </section>
 </template>
