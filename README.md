@@ -17,7 +17,6 @@ Each persona features its own visual theme, typography, background overlays, and
 - **Dynamic Theme Switching** - Each persona has unique colors, fonts, and visual elements
 - **Interactive Timeline** - Career events highlight based on selected persona
 - **Responsive Photo Galleries** - Polaroid-style photos with persona-specific content
-- **Smooth Transitions** - Seamless animations between persona switches
 - **Background Overlays** - Code lines for developer, grid for designer, film strips for editor
 - **Route-based Navigation** - Direct URLs for each persona (`/developer`, `/designer`, `/editor`)
 
