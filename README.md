@@ -1,54 +1,47 @@
-# persona-portfolio
+# Persona Portfolio
 
-This template should help get you started developing with Vue 3 in Vite.
+A dynamic portfolio website that showcases three professional personas through an interactive, theme-switching interface. Built with Vue 3, TypeScript, and Tailwind CSS.
 
-## Recommended IDE Setup
+## 🎭 About
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+This portfolio presents my professional journey through three distinct personas:
 
-## Recommended Browser Setup
+- **👨‍💻 Developer** - Full-stack development with frontend focus
+- **🎬 Editor** - Video editing and motion graphics expertise
+- **🎨 Designer** - UI/UX and interactive design background
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+Each persona features its own visual theme, typography, background overlays, and curated content including career timelines, photo galleries, and skill showcases.
 
-## Type Support for `.vue` Imports in TS
+## ✨ Features
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- **Dynamic Theme Switching** - Each persona has unique colors, fonts, and visual elements
+- **Interactive Timeline** - Career events highlight based on selected persona
+- **Responsive Photo Galleries** - Polaroid-style photos with persona-specific content
+- **Smooth Transitions** - Seamless animations between persona switches
+- **Background Overlays** - Code lines for developer, grid for designer, film strips for editor
+- **Route-based Navigation** - Direct URLs for each persona (`/developer`, `/designer`, `/editor`)
 
-## Customize configuration
+## 🛠 Tech Stack
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- **Vue 3** with Composition API
+- **TypeScript** for type safety
+- **Tailwind CSS** for styling
+- **Pinia** for state management
+- **Vue Router** for navigation
+- **Vite** for development and building
 
-## Project Setup
+## 🎨 Design System
 
-```sh
-npm install
-```
+Each persona maintains its own design system:
 
-### Compile and Hot-Reload for Development
+- **Fonts**: Fira Code (Developer), Archivo (Designer), Domine (Editor)
+- **Colors**: Blue theme (Developer), Purple theme (Designer), Red theme (Editor)
+- **Overlays**: Code lines, Grid pattern, Film strips respectively
 
-```sh
-npm run dev
-```
+## 🌐 Deployment
 
-### Type-Check, Compile and Minify for Production
+The site is configured for GitHub Pages deployment with automated workflows. Push to `main` branch to trigger deployment.
 
-```sh
-npm run build
-```
+## 📄 License
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+This project is personal portfolio code. Feel free to use as inspiration for your own portfolio!
