@@ -35,11 +35,11 @@ watch(
     </router-view>
 
     <!-- Debug: Persona indicator -->
-    <div
+    <!-- <div
       class="fixed bottom-8 left-8 rounded-full border border-white/10 bg-black/50 px-4 py-2 text-sm font-medium backdrop-blur-sm"
       :style="{ color: personaStore.theme.primary }"
     >
       Currently viewing: {{ personaStore.personaContent.title }}
-    </div>
+    </div> -->
   </div>
 </template>
