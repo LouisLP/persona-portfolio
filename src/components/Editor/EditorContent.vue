@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import PersonaGalleryTimeline from '@/components/PersonaGalleryTimeline.vue'
 import { usePersonaStore } from '@/stores/persona'
+import { useAssetPath } from '@/composables/useAssetPath'
 
 const personaStore = usePersonaStore()
 
@@ -57,7 +58,7 @@ const motionGraphics = [
         <!-- GIF Container -->
         <div class="relative aspect-video overflow-hidden">
           <img
-            :src="`/motion_graphics_gifs/${item.filename}`"
+            :src="useAssetPath(`/motion_graphics_gifs/${item.filename}`)"
             :alt="item.title"
             class="size-full object-cover transition-transform duration-100 group-hover:scale-105"
             loading="lazy"

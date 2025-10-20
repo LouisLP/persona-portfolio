@@ -3,6 +3,7 @@ import CareerTimeline from '@/components/CareerTimeline.vue'
 import PolaroidPhoto from '@/components/PolaroidPhoto.vue'
 import { usePersonaStore } from '@/stores/persona'
 import { computed, ref, onMounted, onUnmounted } from 'vue'
+import { useAssetPath } from '@/composables/useAssetPath'
 
 interface Props {
   title: string
@@ -32,22 +33,22 @@ onUnmounted(() => {
 // Photo sets for each persona
 const photoSets = {
   editor: [
-    { imagePath: '/polaroid_photos/editor/CLG_Camera.jpg', rotation: -4 },
-    { imagePath: '/polaroid_photos/editor/Covid_Setup_Berlin.jpg', rotation: 2 },
-    { imagePath: '/polaroid_photos/editor/LEC_Studio_Room.jpg', rotation: -1 },
-    { imagePath: '/polaroid_photos/editor/CLG_On_Stage.jpg', rotation: 3 },
+    { imagePath: useAssetPath('/polaroid_photos/editor/CLG_Camera.jpg'), rotation: -4 },
+    { imagePath: useAssetPath('/polaroid_photos/editor/Covid_Setup_Berlin.jpg'), rotation: 2 },
+    { imagePath: useAssetPath('/polaroid_photos/editor/LEC_Studio_Room.jpg'), rotation: -1 },
+    { imagePath: useAssetPath('/polaroid_photos/editor/CLG_On_Stage.jpg'), rotation: 3 },
   ],
   designer: [
-    { imagePath: '/polaroid_photos/designer/TwitchCon_2017.jpg', rotation: -4 },
-    { imagePath: '/polaroid_photos/designer/CLG_Jersey.jpg', rotation: 2 },
-    { imagePath: '/polaroid_photos/designer/Fidget_Head.jpg', rotation: -1 },
-    { imagePath: '/polaroid_photos/designer/Writing_On_Table.jpg', rotation: 3 },
+    { imagePath: useAssetPath('/polaroid_photos/designer/TwitchCon_2017.jpg'), rotation: -4 },
+    { imagePath: useAssetPath('/polaroid_photos/designer/CLG_Jersey.jpg'), rotation: 2 },
+    { imagePath: useAssetPath('/polaroid_photos/designer/Fidget_Head.jpg'), rotation: -1 },
+    { imagePath: useAssetPath('/polaroid_photos/designer/Writing_On_Table.jpg'), rotation: 3 },
   ],
   developer: [
-    { imagePath: '/polaroid_photos/developer/Timbits.jpg', rotation: -4 },
-    { imagePath: '/polaroid_photos/developer/Japan.jpg', rotation: 2 },
-    { imagePath: '/polaroid_photos/developer/SFU.jpg', rotation: -1 },
-    { imagePath: '/polaroid_photos/developer/Jobreel_Photo.jpg', rotation: 3 },
+    { imagePath: useAssetPath('/polaroid_photos/developer/Timbits.jpg'), rotation: -4 },
+    { imagePath: useAssetPath('/polaroid_photos/developer/Japan.jpg'), rotation: 2 },
+    { imagePath: useAssetPath('/polaroid_photos/developer/SFU.jpg'), rotation: -1 },
+    { imagePath: useAssetPath('/polaroid_photos/developer/Jobreel_Photo.jpg'), rotation: 3 },
   ],
 }
 
