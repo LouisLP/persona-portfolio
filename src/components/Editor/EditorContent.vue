@@ -69,7 +69,10 @@ const motionGraphics = [
   </section>
 
   <!-- WIP -->
-  <section class="py-16 text-center opacity-70">
-    <p class="text-lg italic">More editor content coming soon! Stay tuned.</p>
+  <section class="py-12 text-center">
+    <p class="text-lg italic opacity-80 md:text-xl">This is a work in progress.</p>
+    <p class="text-base italic opacity-40 md:text-lg">
+      More editor content coming soon! Stay tuned.
+    </p>
   </section>
 </template>
