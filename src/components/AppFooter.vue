@@ -70,11 +70,10 @@ const downloadCV = () => {
         <!-- CV Download Button -->
         <button
           @click="downloadCV"
-          class="flex cursor-pointer items-center space-x-2 rounded-lg border px-4 py-2 text-sm font-medium"
+          class="flex cursor-pointer items-center space-x-2 rounded-lg border bg-transparent px-4 py-2 text-sm font-medium hover:bg-gray-900"
           :style="{
             borderColor: personaStore.theme.primary,
             color: personaStore.theme.primary,
-            backgroundColor: 'transparent',
           }"
           :class="{ 'hover:bg-opacity-10': true }"
         >
