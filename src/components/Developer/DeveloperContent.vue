@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import PersonaGalleryTimeline from '@/components/PersonaGalleryTimeline.vue'
-import CodeBlock from '@/components/Developer/CodeBlock.vue'
+import CodeBlocks from '@/components/Developer/CodeBlocks.vue'
 import TechStack from '@/components/Developer/TechStack.vue'
 </script>
 
@@ -12,7 +12,7 @@ import TechStack from '@/components/Developer/TechStack.vue'
 
   <!-- Code intro -->
   <section class="mb-16 flex justify-center">
-    <CodeBlock />
+    <CodeBlocks />
   </section>
 
   <!-- Preferred tech stack (Vue, TypeScript, Vite, Node, Tailwind) -->
