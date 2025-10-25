@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { usePersonaStore } from '@/stores/persona'
+import { useAssetPath } from '@/composables/useAssetPath'
 
 const personaStore = usePersonaStore()
 
@@ -22,9 +23,15 @@ const socialLinks = [
 ]
 
 const downloadCV = () => {
-  // You can implement this to download an actual PDF file
-  // For now, this opens a placeholder
-  window.open('/cv.pdf', '_blank')
+  const cvPath = useAssetPath('/cv.pdf')
+
+  // Temporary link element to trigger download
+  const link = document.createElement('a')
+  link.href = cvPath
+  link.download = 'Louis_Lascelles-Palys_CV.pdf' // Custom filename for download
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
 }
 </script>
 
