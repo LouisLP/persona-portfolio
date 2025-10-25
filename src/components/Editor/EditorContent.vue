@@ -2,6 +2,7 @@
 import PersonaGalleryTimeline from '@/components/PersonaGalleryTimeline.vue'
 import { usePersonaStore } from '@/stores/persona'
 import { useAssetPath } from '@/composables/useAssetPath'
+import BaseTitle from '@/components/Base/BaseTitle.vue'
 
 const personaStore = usePersonaStore()
 
@@ -60,16 +61,10 @@ const youtubeVideos = [
     description="I've been editing since I was 10, starting with YouTube guides and eventually transitioning into professional video and motion design work for major esports organizations. That long history of creative storytelling through video gives me a deep intuition for pacing, narrative, and visual impact."
   />
 
-  <div class="container mx-auto space-y-20 px-6 py-16">
+  <div class="container mx-auto space-y-20 py-16">
     <!-- Motion Graphics Gallery -->
     <section>
-      <h3
-        class="mb-8 text-2xl font-bold"
-        :class="`font-${personaStore.currentPersona}`"
-        :style="{ color: personaStore.theme.accent }"
-      >
-        Motion Graphics
-      </h3>
+      <BaseTitle class="mb-8">Motion Graphics</BaseTitle>
 
       <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         <div
@@ -107,13 +102,7 @@ const youtubeVideos = [
 
     <!-- YouTube Videos Section -->
     <section>
-      <h3
-        class="mb-8 text-2xl font-bold"
-        :class="`font-${personaStore.currentPersona}`"
-        :style="{ color: personaStore.theme.accent }"
-      >
-        Video Edits
-      </h3>
+      <BaseTitle class="mb-8">Edits</BaseTitle>
 
       <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
         <div
