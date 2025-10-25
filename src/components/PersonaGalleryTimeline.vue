@@ -4,6 +4,7 @@ import PolaroidPhoto from '@/components/PolaroidPhoto.vue'
 import { usePersonaStore } from '@/stores/persona'
 import { computed, ref, onMounted, onUnmounted } from 'vue'
 import { useAssetPath } from '@/composables/useAssetPath'
+import BaseTitle from '@/components/Base/BaseTitle.vue'
 
 interface Props {
   title: string
@@ -66,13 +67,7 @@ const currentPhotos = computed(() => {
     <section class="grid grid-cols-1 items-center gap-12 md:grid-cols-5">
       <div class="col-span-5 space-y-6 lg:col-span-3">
         <!-- Title/blurb -->
-        <h2
-          class="px-6 text-3xl font-bold md:text-4xl"
-          :class="`font-${personaStore.currentPersona}`"
-          :style="{ color: personaStore.theme.accent }"
-        >
-          {{ title }}
-        </h2>
+        <BaseTitle>{{ title }}</BaseTitle>
 
         <div
           class="space-y-4 px-6 text-lg leading-relaxed"
