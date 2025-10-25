@@ -45,11 +45,11 @@ const openDocumentation = (url: string) => {
     <BaseTitle class="text-left md:text-center">Preferred Tech Stack</BaseTitle>
 
     <!-- Each item -->
-    <div class="flex flex-wrap justify-center gap-6">
+    <div class="flex flex-wrap justify-center gap-2 md:gap-6">
       <div
         v-for="item in techItems"
         :key="item.name"
-        class="group relative flex size-32 cursor-pointer items-center justify-center rounded-xl border border-gray-700/50 bg-gradient-to-br from-gray-800 to-gray-900 shadow-inner transition-all duration-300 hover:scale-[101%] hover:shadow-lg md:size-48"
+        class="group relative flex size-24 cursor-pointer items-center justify-center rounded-xl border border-gray-700/50 bg-gradient-to-br from-gray-800 to-gray-900 shadow-inner transition-all duration-300 hover:scale-[101%] hover:shadow-lg md:size-32 lg:size-48"
         style="
           box-shadow:
             inset 0 2px 4px rgba(0, 0, 0, 0.4),
@@ -66,7 +66,7 @@ const openDocumentation = (url: string) => {
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
           :fill="personaStore.theme.primary"
-          class="size-8 transition-all duration-100 md:size-16"
+          class="size-8 transition-all duration-100 lg:size-16"
         >
           <title>{{ item.name }}</title>
           <path :d="item.path" />
