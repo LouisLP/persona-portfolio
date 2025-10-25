@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import BaseTitle from '@/components/Base/BaseTitle.vue'
 import { usePersonaStore } from '@/stores/persona'
 import { ref } from 'vue'
 
@@ -39,8 +40,11 @@ const openDocumentation = (url: string) => {
 </script>
 
 <template>
-  <div class="relative">
-    <h3 class="mb-8 text-lg font-semibold">Preferred Tech Stack</h3>
+  <div class="relative space-y-6">
+    <!-- Title -->
+    <BaseTitle>Preferred Tech Stack</BaseTitle>
+
+    <!-- Each item -->
     <div class="flex flex-wrap justify-center gap-6">
       <div
         v-for="item in techItems"
