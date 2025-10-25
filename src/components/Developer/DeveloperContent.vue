@@ -15,16 +15,8 @@ import TechStack from '@/components/Developer/TechStack.vue'
     <CodeBlocks />
   </section>
 
-  <!-- Preferred tech stack (Vue, TypeScript, Vite, Node, Tailwind) -->
-  <section class="text-center">
+  <!-- Preferred tech stack -->
+  <section class="pb-12 text-center">
     <TechStack />
-  </section>
-
-  <!-- WIP -->
-  <section class="py-12 text-center">
-    <p class="text-lg italic opacity-80 md:text-xl">This is a work in progress.</p>
-    <p class="text-base italic opacity-40 md:text-lg">
-      More developer content coming soon! Stay tuned.
-    </p>
   </section>
 </template>

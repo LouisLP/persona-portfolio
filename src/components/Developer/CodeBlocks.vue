@@ -59,12 +59,10 @@ const projects = [
       <header class="text-blue-400">const skills = {</header>
       <div class="ml-4 text-gray-300">
         <section v-for="(skillList, category) in skills" :key="category">
-          <span class="text-purple-400">{{ category }}: </span>
-          [
+          <span class="text-purple-400">{{ category }}: </span>[
           <span v-for="(skill, index) in skillList" :key="skill" class="text-green-400">
-            '{{ skill }}'<span v-if="index < skillList.length - 1">, </span>
-          </span>
-          ],
+            '{{ skill }}' <span v-if="index < skillList.length - 1">, </span> </span
+          >],
         </section>
       </div>
       <div class="text-blue-400">}</div>
