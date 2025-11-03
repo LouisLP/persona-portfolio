@@ -75,7 +75,7 @@ const openDocumentation = (url: string) => {
         <!-- Hover overlay with description -->
         <div
           v-if="hoveredItem === item.name"
-          class="absolute inset-0 flex flex-col items-center justify-center rounded-xl bg-black/80 p-4 text-center backdrop-blur-sm transition-all duration-100"
+          class="absolute inset-0 hidden flex-col items-center justify-center rounded-xl bg-black/80 p-4 text-center backdrop-blur-sm transition-all duration-100 lg:flex"
         >
           <h4 class="mb-2 text-sm font-semibold" :style="{ color: personaStore.theme.primary }">
             {{ item.name }}
