@@ -92,16 +92,54 @@ const buttonStyles = computed(() => {
 
     <!-- Content -->
     <div :class="loading ? 'invisible' : 'flex items-center gap-2.5'">
-      <!-- Icon -->
+      <!-- Glass Icon - Champagne -->
       <svg
-        v-if="icon"
-        class="size-4 transition-transform duration-300 group-hover:rotate-12"
-        viewBox="0 0 256 256"
+        v-if="icon && variant === 'glass'"
+        class="size-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12"
         fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 256 256"
       >
         <path
-          d="M185.33,114.21l29.14-27.42.17-.17a32,32,0,0,0-45.26-45.26c0,.06-.11.11-.17.17L141.79,70.67l-83-30.2a8,8,0,0,0-8.39,1.86l-24,24a8,8,0,0,0,1.22,12.31l63.89,42.59L76.69,136H56a8,8,0,0,0-5.65,2.34l-24,24A8,8,0,0,0,29,175.42l36.82,14.73,14.7,36.75.06.16a8,8,0,0,0,13.18,2.47l23.87-23.88A8,8,0,0,0,120,200V179.31l14.76-14.76,42.59,63.89a8,8,0,0,0,12.31,1.22l24-24a8,8,0,0,0,1.86-8.39Z"
-        />
+          d="M149.91,13.53A8,8,0,0,0,142.3,8H97.71a8,8,0,0,0-7.61,5.53,451,451,0,0,0-14.21,59.7c-7.26,44.25-4.35,75.76,8.65,93.66A40,40,0,0,0,112,183.42V232H96a8,8,0,1,0,0,16h48a8,8,0,0,0,0-16H128V183.42a39.94,39.94,0,0,0,27.46-16.53c13-17.9,15.92-49.41,8.66-93.66A451,451,0,0,0,149.91,13.53ZM93.8,64c3-15.58,6.73-29.81,9.79-40h32.83c3.06,10.19,6.77,24.42,9.8,40ZM232,52a12,12,0,1,1-12-12A12,12,0,0,1,232,52ZM184,20a12,12,0,1,1,12,12A12,12,0,0,1,184,20Zm24,80a12,12,0,1,1-12-12A12,12,0,0,1,208,100Z"
+        ></path>
+      </svg>
+
+      <!-- Solid Icon - Filled Circle -->
+      <svg
+        v-if="icon && variant === 'solid'"
+        class="size-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <circle cx="12" cy="12" r="10" />
+      </svg>
+
+      <!-- Outline Icon - Circle Outline -->
+      <svg
+        v-if="icon && variant === 'outline'"
+        class="size-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <circle cx="12" cy="12" r="10" />
+      </svg>
+
+      <!-- Ghost Icon - Dashed Circle -->
+      <svg
+        v-if="icon && variant === 'ghost'"
+        class="size-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-dasharray="5,5"
+      >
+        <circle cx="12" cy="12" r="10" />
       </svg>
 
       <!-- Text -->
