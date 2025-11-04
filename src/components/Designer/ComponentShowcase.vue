@@ -33,11 +33,11 @@ import BaseTitle from '@/components/Base/BaseTitle.vue'
       <!-- Neo-Brutalist Buttons - High contrast, stays dark -->
       <ButtonShowcase
         title="Neo-Brutalist Buttons"
-        description="Bold, harsh, and unapologetically loud."
+        description="Yeah I know it's overdone."
         :button-component="NeoBrutalistButton"
-        gradient-from="from-gray-900"
-        gradient-via="via-black"
-        gradient-to="to-gray-900"
+        gradient-from="from-gray-800"
+        gradient-via="via-gray-700"
+        gradient-to="to-gray-800"
         :variants="['electric', 'cyber', 'toxic', 'void']"
       />
 
@@ -46,19 +46,19 @@ import BaseTitle from '@/components/Base/BaseTitle.vue'
         title="Medieval Buttons"
         description="Inspired by one of my favourite games (OSRS)."
         :button-component="MedievalButton"
-        gradient-from="from-stone-800"
-        gradient-via="via-stone-900"
-        gradient-to="to-slate-900"
+        gradient-from="from-stone-700"
+        gradient-via="via-stone-800"
+        gradient-to="to-slate-700"
         :variants="['knight', 'royal', 'stone', 'gold']"
       />
 
       <!-- Retro Buttons - Much darker, subtle hint of color -->
       <ButtonShowcase
         title="Retro Buttons"
-        description="80s nostalgia meets modern polish."
+        description="Shiny retro vibes."
         :button-component="RetroButton"
-        gradient-from="from-slate-900"
-        gradient-via="via-gray-900"
+        gradient-from="from-slate-800"
+        gradient-via="via-pink-800"
         gradient-to="to-slate-800"
         :variants="['synthwave', 'neon', 'arcade', 'hologram']"
       />

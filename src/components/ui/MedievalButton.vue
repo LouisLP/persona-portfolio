@@ -43,48 +43,48 @@ const buttonStyles = computed(() => {
 
   const variants = {
     knight: [
-      'bg-gradient-to-b from-slate-600 via-slate-700 to-slate-900',
-      'border-amber-700 text-amber-100',
-      'shadow-[inset_0_1px_0_rgba(255,255,255,0.1),inset_0_-2px_8px_rgba(0,0,0,0.5),0_8px_16px_rgba(0,0,0,0.6)]',
-      '[text-shadow:_0_2px_4px_rgb(0_0_0_/_80%)]',
+      'bg-gradient-to-b from-stone-700 via-stone-800 to-stone-900',
+      'border-stone-950 text-orange-200',
+      'shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_2px_0_rgba(0,0,0,0.4)]',
+      '[text-shadow:_0_1px_2px_rgb(0_0_0_/_60%)]',
       // Hover/state effects:
-      'hover:from-slate-500 hover:via-slate-600 hover:to-slate-800 hover:border-amber-600 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.2),inset_0_-2px_8px_rgba(0,0,0,0.6),0_12px_24px_rgba(0,0,0,0.7)] hover:-translate-y-1',
-      'active:from-slate-700 active:to-slate-600 active:shadow-[inset_0_2px_8px_rgba(0,0,0,0.8),0_4px_8px_rgba(0,0,0,0.4)] active:translate-y-0 active:scale-95',
-      'focus-visible:ring-2 focus-visible:ring-amber-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900',
-      'transition-all duration-200 ease-out',
+      'hover:from-stone-600 hover:via-stone-700 hover:to-stone-800 hover:brightness-110',
+      'active:from-stone-800 active:to-stone-700 active:shadow-[inset_0_1px_2px_rgba(0,0,0,0.6)] active:brightness-90',
+      'focus-visible:ring-1 focus-visible:ring-orange-400/50',
+      'transition-all duration-100 ease-linear',
     ],
     royal: [
-      'bg-gradient-to-b from-purple-600 via-purple-700 to-purple-900',
-      'border-yellow-600 text-yellow-50',
-      'shadow-[inset_0_1px_0_rgba(255,255,255,0.15),inset_0_-2px_8px_rgba(0,0,0,0.6),0_8px_16px_rgba(88,28,135,0.7)]',
-      '[text-shadow:_0_2px_4px_rgb(88_28_135_/_90%)]',
+      'bg-gradient-to-b from-red-800 via-red-900 to-red-950',
+      'border-red-950 text-yellow-200',
+      'shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_2px_0_rgba(0,0,0,0.4)]',
+      '[text-shadow:_0_1px_2px_rgb(0_0_0_/_60%)]',
       // Hover/state effects:
-      'hover:from-purple-500 hover:via-purple-600 hover:to-purple-800 hover:border-yellow-500 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.25),inset_0_-2px_8px_rgba(0,0,0,0.7),0_12px_24px_rgba(88,28,135,0.8)] hover:-translate-y-1',
-      'active:from-purple-700 active:to-purple-600 active:shadow-[inset_0_2px_8px_rgba(0,0,0,0.8),0_4px_8px_rgba(88,28,135,0.5)] active:translate-y-0 active:scale-95',
-      'focus-visible:ring-2 focus-visible:ring-yellow-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-purple-900',
-      'transition-all duration-200 ease-out',
+      'hover:from-red-700 hover:via-red-800 hover:to-red-900 hover:brightness-110',
+      'active:from-red-900 active:to-red-800 active:shadow-[inset_0_1px_2px_rgba(0,0,0,0.6)] active:brightness-90',
+      'focus-visible:ring-1 focus-visible:ring-yellow-400/50',
+      'transition-all duration-100 ease-linear',
     ],
     stone: [
-      'bg-gradient-to-b from-stone-400 via-stone-500 to-stone-700',
-      'border-stone-800 text-stone-100',
-      'shadow-[inset_0_1px_0_rgba(255,255,255,0.2),inset_0_-2px_8px_rgba(0,0,0,0.4),0_8px_16px_rgba(0,0,0,0.5)]',
-      '[text-shadow:_0_2px_4px_rgb(0_0_0_/_70%)]',
+      'bg-gradient-to-b from-slate-500 via-slate-600 to-slate-700',
+      'border-slate-900 text-slate-100',
+      'shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_2px_0_rgba(0,0,0,0.4)]',
+      '[text-shadow:_0_1px_2px_rgb(0_0_0_/_60%)]',
       // Hover/state effects:
-      'hover:from-stone-300 hover:via-stone-400 hover:to-stone-600 hover:border-stone-700 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.3),inset_0_-2px_8px_rgba(0,0,0,0.5),0_12px_24px_rgba(0,0,0,0.6)] hover:-translate-y-1',
-      'active:from-stone-500 active:to-stone-400 active:shadow-[inset_0_2px_8px_rgba(0,0,0,0.6),0_4px_8px_rgba(0,0,0,0.4)] active:translate-y-0 active:scale-95',
-      'focus-visible:ring-2 focus-visible:ring-stone-300/60 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-700',
-      'transition-all duration-200 ease-out',
+      'hover:from-slate-400 hover:via-slate-500 hover:to-slate-600 hover:brightness-110',
+      'active:from-slate-600 active:to-slate-500 active:shadow-[inset_0_1px_2px_rgba(0,0,0,0.6)] active:brightness-90',
+      'focus-visible:ring-1 focus-visible:ring-slate-300/50',
+      'transition-all duration-100 ease-linear',
     ],
     gold: [
-      'bg-gradient-to-b from-yellow-300 via-yellow-500 to-yellow-700',
-      'border-yellow-950 text-yellow-950',
-      'shadow-[inset_0_1px_0_rgba(255,255,255,0.4),inset_0_-2px_8px_rgba(133,77,14,0.5),0_8px_16px_rgba(161,98,7,0.6)]',
-      '[text-shadow:_0_1px_2px_rgb(255_255_255_/_30%)]',
+      'bg-gradient-to-b from-amber-400 via-amber-500 to-amber-600',
+      'border-amber-900 text-amber-950',
+      'shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_2px_0_rgba(0,0,0,0.3)]',
+      '[text-shadow:_0_1px_1px_rgb(255_255_255_/_20%)]',
       // Hover/state effects:
-      'hover:from-yellow-200 hover:via-yellow-400 hover:to-yellow-600 hover:border-yellow-900 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.6),inset_0_-2px_8px_rgba(133,77,14,0.6),0_12px_24px_rgba(161,98,7,0.7)] hover:-translate-y-1',
-      'active:from-yellow-400 active:to-yellow-300 active:shadow-[inset_0_2px_8px_rgba(133,77,14,0.7),0_4px_8px_rgba(161,98,7,0.5)] active:translate-y-0 active:scale-95',
-      'focus-visible:ring-2 focus-visible:ring-yellow-300/80 focus-visible:ring-offset-2 focus-visible:ring-offset-yellow-600',
-      'transition-all duration-200 ease-out',
+      'hover:from-amber-300 hover:via-amber-400 hover:to-amber-500 hover:brightness-110',
+      'active:from-amber-600 active:to-amber-500 active:shadow-[inset_0_1px_2px_rgba(0,0,0,0.4)] active:brightness-90',
+      'focus-visible:ring-1 focus-visible:ring-amber-300/60',
+      'transition-all duration-100 ease-linear',
     ],
   }
 
@@ -144,11 +144,7 @@ const cornerStyles = computed(() => {
       <svg
         v-if="icon && variant === 'knight'"
         class="mb-0.5 h-5 w-5 flex-shrink-0"
-        fill="#ffffff"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        fill="currentColor"
         width="16"
         height="16"
         viewBox="0 0 256 256"
