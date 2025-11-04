@@ -44,17 +44,16 @@ const buttonStyles = computed(() => {
 
   const variants = {
     synthwave: [
-      'bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600',
+      'bg-gradient-to-r from-pink-600 via-purple-700 to-indigo-700',
       'border-pink-400 text-white',
       'shadow-[0_0_20px_rgba(236,72,153,0.3)]',
       'hover:shadow-[0_0_30px_rgba(236,72,153,0.5)] hover:border-pink-300 hover:scale-105',
       'active:scale-100 active:shadow-[0_0_15px_rgba(236,72,153,0.4)]',
       'focus-visible:ring-2 focus-visible:ring-pink-400 focus-visible:ring-offset-2',
-      // Animated background
       'before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent before:-translate-x-full hover:before:translate-x-full before:transition-transform before:duration-700',
     ],
     neon: [
-      'bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600',
+      'bg-gradient-to-r from-cyan-600 via-blue-700 to-purple-700',
       'border-cyan-400 text-white',
       'shadow-[0_0_20px_rgba(34,211,238,0.4)]',
       'hover:shadow-[0_0_30px_rgba(34,211,238,0.6)] hover:border-cyan-300 hover:scale-105',
@@ -63,7 +62,7 @@ const buttonStyles = computed(() => {
       'before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent before:-translate-x-full hover:before:translate-x-full before:transition-transform before:duration-700',
     ],
     arcade: [
-      'bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500',
+      'bg-gradient-to-r from-yellow-600 via-orange-600 to-red-600',
       'border-yellow-400 text-white',
       'shadow-[0_0_20px_rgba(251,191,36,0.4)]',
       '[text-shadow:_0_2px_4px_rgb(0_0_0_/_50%)]',
@@ -73,13 +72,12 @@ const buttonStyles = computed(() => {
       'before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/15 before:to-transparent before:-translate-x-full hover:before:translate-x-full before:transition-transform before:duration-700',
     ],
     hologram: [
-      'bg-gradient-to-r from-teal-400 via-green-400 to-blue-500',
+      'bg-gradient-to-r from-teal-600 via-green-600 to-blue-600',
       'border-teal-400 text-white',
       'shadow-[0_0_20px_rgba(45,212,191,0.3)]',
       'hover:shadow-[0_0_30px_rgba(45,212,191,0.5)] hover:border-teal-300 hover:scale-105',
       'active:scale-100 active:shadow-[0_0_15px_rgba(45,212,191,0.4)]',
       'focus-visible:ring-2 focus-visible:ring-teal-400 focus-visible:ring-offset-2',
-      // Iridescent shimmer effect
       'before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:-translate-x-full hover:before:translate-x-full before:transition-transform before:duration-1000',
       'after:absolute after:inset-0 after:bg-[linear-gradient(45deg,transparent_30%,rgba(255,255,255,0.1)_50%,transparent_70%)] after:animate-pulse',
     ],
@@ -130,15 +128,19 @@ const buttonStyles = computed(() => {
 
     <!-- Content -->
     <div :class="loading ? 'invisible' : 'relative z-10 flex items-center justify-center gap-2.5'">
-      <!-- Retro Icons -->
-      <!-- Cassette Tape -->
+      <!-- Wave -->
       <svg
         v-if="icon && variant === 'synthwave'"
         class="h-5 w-5 flex-shrink-0"
         fill="currentColor"
-        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 256 256"
       >
-        <path d="M4 6h16v12H4V6zm2 2v8h12V8H6zm2 2h8v4H8v-4zm1 1v2h2v-2H9zm4 0v2h2v-2h-2z" />
+        <path
+          d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm-4.78,91.44c-16.68,35-31.06,50.56-46.65,50.56-19.68,0-31.39-24.56-43.79-50.56C112,113,101,90,91.43,90c-3.74,0-14.37,4-32.21,41.44a8,8,0,0,1-14.44-6.88C61.46,89.59,75.84,74,91.43,74c19.68,0,31.39,24.56,43.79,50.56C144,143,155,166,164.57,166c3.74,0,14.37-4,32.21-41.44a8,8,0,1,1,14.44,6.88Z"
+        ></path>
       </svg>
 
       <!-- Computer Terminal -->
@@ -153,16 +155,19 @@ const buttonStyles = computed(() => {
         />
       </svg>
 
-      <!-- Game Controller -->
+      <!-- Joystick -->
       <svg
         v-if="icon && variant === 'arcade'"
         class="h-5 w-5 flex-shrink-0"
         fill="currentColor"
-        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 256 256"
       >
         <path
-          d="M6 9h2v2H6V9zm0 4h2v2H6v-2zm4-4h2v2h-2V9zm0 4h2v2h-2v-2zm4-4h2v2h-2V9zm0 4h2v2h-2v-2zM2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10S2 17.52 2 12zm2 0c0 4.41 3.59 8 8 8s8-3.59 8-8-3.59-8-8-8-8 3.59-8 8z"
-        />
+          d="M224,160v48a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V160a16,16,0,0,1,16-16h72V95.19a40,40,0,1,1,16,0V144h72A16,16,0,0,1,224,160Zm-64-40a8,8,0,0,0,8,8h32a8,8,0,0,0,0-16H168A8,8,0,0,0,160,120Z"
+        ></path>
       </svg>
 
       <!-- Prism/Diamond -->
@@ -170,11 +175,14 @@ const buttonStyles = computed(() => {
         v-if="icon && variant === 'hologram'"
         class="h-5 w-5 flex-shrink-0"
         fill="currentColor"
-        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 256 256"
       >
         <path
-          d="M12 2l3.09 6.26L22 9l-5.91 3.74L12 22l-4.09-9.26L2 9l6.91-.74L12 2zm0 4.13L10.5 9.5 12 10.87 13.5 9.5 12 6.13z"
-        />
+          d="M246,98.73l-56-64A8,8,0,0,0,184,32H72a8,8,0,0,0-6,2.73l-56,64a8,8,0,0,0,.17,10.73l112,120a8,8,0,0,0,11.7,0l112-120A8,8,0,0,0,246,98.73ZM222.37,96H180L144,48h36.37ZM74.58,112l30.13,75.33L34.41,112Zm106.84,0h40.17l-70.3,75.33ZM75.63,48H112L76,96H33.63Z"
+        ></path>
       </svg>
 
       <!-- Text with retro styling -->
