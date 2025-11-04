@@ -14,7 +14,7 @@ import BaseTitle from '@/components/Base/BaseTitle.vue'
       <BaseTitle>Button Collection</BaseTitle>
       <p class="mt-4 max-w-3xl px-6 text-lg text-gray-600 dark:text-gray-300">
         I love buttons. They're a fundamental part of any UI, and can be styled in countless ways.
-        Here's my collection of button styles, each with their own personality.
+        Here's some of my button styles, each with their own personality.
       </p>
     </div>
 
