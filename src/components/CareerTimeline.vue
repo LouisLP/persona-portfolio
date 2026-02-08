@@ -36,9 +36,9 @@ const events: TimelineEvent[] = [
     id: '3',
     yearStart: 2018,
     yearEnd: 2021,
-    title: 'Senior Video Editor at Misfits Gaming',
+    title: 'Senior Video Editor & Motion Designer',
     description:
-      'Moved to Berlin to lead video editing and motion design for LEC, CDL, and OWL teams.',
+      'Moved to Berlin to lead video editing and motion design for Misfits\' LEC, CDL, and OWL teams.',
     personas: ['editor', 'designer'],
   },
   {
@@ -84,7 +84,7 @@ function isEventHighlighted(event: TimelineEvent) {
   <div class="relative">
     <!-- Vertical line -->
     <div
-      class="absolute top-0 bottom-0 left-[15px] w-0.5 transition-colors duration-500"
+      class="absolute top-0 bottom-0 left-3.75 w-0.5 transition-colors duration-500"
       :style="{ backgroundColor: personaStore.theme.accent }"
     />
 
