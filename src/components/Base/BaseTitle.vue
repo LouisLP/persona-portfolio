@@ -6,7 +6,7 @@ const personaStore = usePersonaStore()
 
 <template>
   <h2
-    class="px-6 text-3xl font-bold md:text-4xl"
+    class="text-3xl font-bold md:text-4xl border-b-4 border-dotted line-clamp-1"
     :class="`font-${personaStore.currentPersona}`"
     :style="{ color: personaStore.theme.accent }"
   >
