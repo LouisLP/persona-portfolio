@@ -78,74 +78,77 @@ const projects = [
       </div>
     </section>
 
-    <!-- Skills Code Block -->
-    <div
-      class="font-developer w-full max-w-2xl rounded-xl border p-8 shadow-2xl backdrop-blur-sm lg:w-1/2"
-      :style="{
-        borderColor: `${personaStore.theme.primary}40`,
-        backgroundColor: `${personaStore.theme.background}CC`,
-        boxShadow: `0 25px 50px -12px ${personaStore.theme.primary}20`,
-      }"
-    >
-      <!-- Skills -->
-      <header class="mb-2 text-lg" :style="{ color: personaStore.theme.primary }">
-        const skills = {
-      </header>
-      <div class="ml-6 space-y-1" :style="{ color: personaStore.theme.text }">
-        <section v-for="(skillList, category) in skills" :key="category" class="leading-relaxed">
-          <span class="font-semibold" :style="{ color: personaStore.theme.secondary }">{{ category }}: </span>[<span
-            v-for="(skill, index) in skillList" :key="skill" class="text-green-400"
-          >'{{ skill }}'<span
-            v-if="index < skillList.length - 1"
-          >, </span></span>],
-        </section>
-      </div>
-      <div class="mt-2 text-lg font-bold" :style="{ color: personaStore.theme.primary }">
-        }
-      </div>
-    </div>
-
-    <!-- Projects Code Block -->
-    <div
-      class="font-developer hover:shadow-3xl w-full max-w-2xl rounded-xl border p-8 shadow-2xl backdrop-blur-sm transition-all duration-300 lg:w-1/2"
-      :style="{
-        borderColor: `${personaStore.theme.secondary}40`,
-        backgroundColor: `${personaStore.theme.background}CC`,
-        boxShadow: `0 25px 50px -12px ${personaStore.theme.secondary}20`,
-      }"
-    >
-      <header class="mb-2 text-lg" :style="{ color: personaStore.theme.primary }">
-        const projects = [
-      </header>
-      <div class="ml-6 space-y-3" :style="{ color: personaStore.theme.text }">
-        <div v-for="(project, index) in projects" :key="project.name" class="leading-relaxed">
-          <div class="font-semibold" :style="{ color: personaStore.theme.primary }">
-            {
-          </div>
-          <div class="ml-4 space-y-1">
-            <div>
-              <span class="font-medium" :style="{ color: personaStore.theme.secondary }">name:
-              </span>
-              <span class="text-green-400">'{{ project.name }}'</span>,
-            </div>
-            <div>
-              <span class="font-medium" :style="{ color: personaStore.theme.secondary }">year:
-              </span>
-              <span class="text-yellow-400">{{ project.year }}</span>,
-            </div>
-            <div>
-              <span class="font-medium" :style="{ color: personaStore.theme.secondary }">description:
-              </span>
-              <span class="text-green-400">'{{ project.description }}'</span>
-            </div>
-          </div>
-          <div class="font-semibold" :style="{ color: personaStore.theme.primary }">
-            }<span v-if="index < projects.length - 1">,</span>
-          </div>
+    <!-- Skills & Projects Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Skills Code Block -->
+      <div
+        class="font-developer w-full rounded-xl border p-8 shadow-2xl backdrop-blur-sm"
+        :style="{
+          borderColor: `${personaStore.theme.primary}40`,
+          backgroundColor: `${personaStore.theme.background}CC`,
+          boxShadow: `0 25px 50px -12px ${personaStore.theme.primary}20`,
+        }"
+      >
+        <!-- Skills -->
+        <header class="mb-2 text-lg" :style="{ color: personaStore.theme.primary }">
+          const skills = {
+        </header>
+        <div class="ml-6 space-y-1" :style="{ color: personaStore.theme.text }">
+          <section v-for="(skillList, category) in skills" :key="category" class="leading-relaxed">
+            <span class="font-semibold" :style="{ color: personaStore.theme.secondary }">{{ category }}: </span>[<span
+              v-for="(skill, index) in skillList" :key="skill" class="text-green-400"
+            >'{{ skill }}'<span
+              v-if="index < skillList.length - 1"
+            >, </span></span>],
+          </section>
+        </div>
+        <div class="mt-2 text-lg font-bold" :style="{ color: personaStore.theme.primary }">
+          }
         </div>
       </div>
-      <div class="mt-2 text-lg font-bold" :style="{ color: personaStore.theme.primary }">
-        ]
+
+      <!-- Projects Code Block -->
+      <div
+        class="font-developer hover:shadow-3xl w-full rounded-xl border p-8 shadow-2xl backdrop-blur-sm transition-all duration-300"
+        :style="{
+          borderColor: `${personaStore.theme.secondary}40`,
+          backgroundColor: `${personaStore.theme.background}CC`,
+          boxShadow: `0 25px 50px -12px ${personaStore.theme.secondary}20`,
+        }"
+      >
+        <header class="mb-2 text-lg" :style="{ color: personaStore.theme.primary }">
+          const projects = [
+        </header>
+        <div class="ml-6 space-y-3" :style="{ color: personaStore.theme.text }">
+          <div v-for="(project, index) in projects" :key="project.name" class="leading-relaxed">
+            <div class="font-semibold" :style="{ color: personaStore.theme.primary }">
+              {
+            </div>
+            <div class="ml-4 space-y-1">
+              <div>
+                <span class="font-medium" :style="{ color: personaStore.theme.secondary }">name:
+                </span>
+                <span class="text-green-400">'{{ project.name }}'</span>,
+              </div>
+              <div>
+                <span class="font-medium" :style="{ color: personaStore.theme.secondary }">year:
+                </span>
+                <span class="text-yellow-400">{{ project.year }}</span>,
+              </div>
+              <div>
+                <span class="font-medium" :style="{ color: personaStore.theme.secondary }">description:
+                </span>
+                <span class="text-green-400">'{{ project.description }}'</span>
+              </div>
+            </div>
+            <div class="font-semibold" :style="{ color: personaStore.theme.primary }">
+              }<span v-if="index < projects.length - 1">,</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-2 text-lg font-bold" :style="{ color: personaStore.theme.primary }">
+          ]
+        </div>
       </div>
     </div>
   </div>
