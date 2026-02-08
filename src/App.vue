@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { usePersonaStore } from '@/stores/persona'
-import { useRoute } from 'vue-router'
 import { watch } from 'vue'
-import PersonaSwitcher from '@/components/PersonaSwitcher.vue'
+import { useRoute } from 'vue-router'
 import AppFooter from '@/components/AppFooter.vue'
+import PersonaSwitcher from '@/components/PersonaSwitcher.vue'
+import { usePersonaStore } from '@/stores/persona'
 
 const personaStore = usePersonaStore()
 const route = useRoute()

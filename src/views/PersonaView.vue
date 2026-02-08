@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import HeroSection from '@/components/HeroSection.vue'
-import DeveloperContent from '@/components/Developer/DeveloperContent.vue'
 import DesignerContent from '@/components/Designer/DesignerContent.vue'
+import DeveloperContent from '@/components/Developer/DeveloperContent.vue'
 import EditorContent from '@/components/Editor/EditorContent.vue'
+import HeroSection from '@/components/HeroSection.vue'
 
 import { usePersonaStore } from '@/stores/persona'
 

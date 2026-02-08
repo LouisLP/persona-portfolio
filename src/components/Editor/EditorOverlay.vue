@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { usePersonaStore } from '@/stores/persona'
+
 const personaStore = usePersonaStore()
 </script>
 

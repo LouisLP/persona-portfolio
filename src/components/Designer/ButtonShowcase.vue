@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { ref, type Component } from 'vue'
+import type { Component } from 'vue'
+import { ref } from 'vue'
 
 interface Props {
   title: string
@@ -34,18 +35,22 @@ props.variants.forEach((variant) => {
   >
     <!-- Animated background elements -->
     <div class="absolute inset-0 opacity-20">
-      <div class="absolute top-8 left-8 h-24 w-24 rounded-full bg-white/10 blur-xl"></div>
-      <div class="absolute right-12 bottom-12 h-20 w-20 rounded-full bg-white/15 blur-lg"></div>
+      <div class="absolute top-8 left-8 h-24 w-24 rounded-full bg-white/10 blur-xl" />
+      <div class="absolute right-12 bottom-12 h-20 w-20 rounded-full bg-white/15 blur-lg" />
       <div
         class="absolute top-1/2 left-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/5 blur-2xl"
-      ></div>
+      />
     </div>
 
     <!-- Button content -->
     <div class="relative space-y-10">
       <div>
-        <h2 class="text-2xl font-bold text-white">{{ title }}</h2>
-        <p class="text-white/80">{{ description }}</p>
+        <h2 class="text-2xl font-bold text-white">
+          {{ title }}
+        </h2>
+        <p class="text-white/80">
+          {{ description }}
+        </p>
       </div>
 
       <!-- Button variants with responsive grid -->

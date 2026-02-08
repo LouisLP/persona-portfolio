@@ -1,10 +1,10 @@
 <script setup lang="ts">
+import { computed, onMounted, onUnmounted, ref } from 'vue'
+import BaseTitle from '@/components/Base/BaseTitle.vue'
 import CareerTimeline from '@/components/CareerTimeline.vue'
 import PolaroidPhoto from '@/components/PolaroidPhoto.vue'
-import { usePersonaStore } from '@/stores/persona'
-import { computed, ref, onMounted, onUnmounted } from 'vue'
 import { useAssetPath } from '@/composables/useAssetPath'
-import BaseTitle from '@/components/Base/BaseTitle.vue'
+import { usePersonaStore } from '@/stores/persona'
 
 interface Props {
   title: string
@@ -18,7 +18,7 @@ const personaStore = usePersonaStore()
 // Screen size tracking
 const screenWidth = ref(0)
 
-const updateScreenWidth = () => {
+function updateScreenWidth() {
   screenWidth.value = window.innerWidth
 }
 

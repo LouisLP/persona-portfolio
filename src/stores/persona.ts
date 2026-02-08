@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { ref, computed } from 'vue'
+import { computed, ref } from 'vue'
 
 export type PersonaType = 'editor' | 'designer' | 'developer'
 
@@ -97,7 +97,8 @@ export const usePersonaStore = defineStore('persona', () => {
 
   // Actions
   const setPersona = async (persona: PersonaType) => {
-    if (persona === currentPersona.value) return
+    if (persona === currentPersona.value)
+      return
 
     isTransitioning.value = true
     currentPersona.value = persona

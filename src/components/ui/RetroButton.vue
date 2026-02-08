@@ -21,7 +21,7 @@ const emit = defineEmits<{
   click: [event: MouseEvent]
 }>()
 
-const handleClick = (event: MouseEvent) => {
+function handleClick(event: MouseEvent) {
   if (!props.disabled && !props.loading) {
     emit('click', event)
   }
@@ -110,7 +110,7 @@ const buttonStyles = computed(() => {
               rgba(255, 255, 255, 0.1) 4px
             );
         "
-      ></div>
+      />
     </div>
 
     <!-- Loading State -->
@@ -121,8 +121,8 @@ const buttonStyles = computed(() => {
       <div class="relative">
         <div
           class="h-6 w-6 animate-spin rounded-full border-2 border-current border-t-transparent"
-        ></div>
-        <div class="absolute inset-0 h-6 w-6 animate-ping rounded-full border border-current"></div>
+        />
+        <div class="absolute inset-0 h-6 w-6 animate-ping rounded-full border border-current" />
       </div>
     </div>
 
@@ -140,7 +140,7 @@ const buttonStyles = computed(() => {
       >
         <path
           d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm-4.78,91.44c-16.68,35-31.06,50.56-46.65,50.56-19.68,0-31.39-24.56-43.79-50.56C112,113,101,90,91.43,90c-3.74,0-14.37,4-32.21,41.44a8,8,0,0,1-14.44-6.88C61.46,89.59,75.84,74,91.43,74c19.68,0,31.39,24.56,43.79,50.56C144,143,155,166,164.57,166c3.74,0,14.37-4,32.21-41.44a8,8,0,1,1,14.44,6.88Z"
-        ></path>
+        />
       </svg>
 
       <!-- Computer Terminal -->
@@ -167,7 +167,7 @@ const buttonStyles = computed(() => {
       >
         <path
           d="M224,160v48a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V160a16,16,0,0,1,16-16h72V95.19a40,40,0,1,1,16,0V144h72A16,16,0,0,1,224,160Zm-64-40a8,8,0,0,0,8,8h32a8,8,0,0,0,0-16H168A8,8,0,0,0,160,120Z"
-        ></path>
+        />
       </svg>
 
       <!-- Prism/Diamond -->
@@ -182,7 +182,7 @@ const buttonStyles = computed(() => {
       >
         <path
           d="M246,98.73l-56-64A8,8,0,0,0,184,32H72a8,8,0,0,0-6,2.73l-56,64a8,8,0,0,0,.17,10.73l112,120a8,8,0,0,0,11.7,0l112-120A8,8,0,0,0,246,98.73ZM222.37,96H180L144,48h36.37ZM74.58,112l30.13,75.33L34.41,112Zm106.84,0h40.17l-70.3,75.33ZM75.63,48H112L76,96H33.63Z"
-        ></path>
+        />
       </svg>
 
       <!-- Text with retro styling -->

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import MinimalButton from '@/components/ui/MinimalButton.vue'
+import BaseTitle from '@/components/Base/BaseTitle.vue'
+import ButtonShowcase from '@/components/Designer/ButtonShowcase.vue'
 import MedievalButton from '@/components/ui/MedievalButton.vue'
+import MinimalButton from '@/components/ui/MinimalButton.vue'
 import NeoBrutalistButton from '@/components/ui/NeoBrutalistButton.vue'
 import RetroButton from '@/components/ui/RetroButton.vue'
-import ButtonShowcase from '@/components/Designer/ButtonShowcase.vue'
-import BaseTitle from '@/components/Base/BaseTitle.vue'
 </script>
 
 <template>

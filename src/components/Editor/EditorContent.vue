@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import PersonaGalleryTimeline from '@/components/PersonaGalleryTimeline.vue'
-import { usePersonaStore } from '@/stores/persona'
-import { useAssetPath } from '@/composables/useAssetPath'
 import BaseTitle from '@/components/Base/BaseTitle.vue'
+import PersonaGalleryTimeline from '@/components/PersonaGalleryTimeline.vue'
+import { useAssetPath } from '@/composables/useAssetPath'
+import { usePersonaStore } from '@/stores/persona'
 
 const personaStore = usePersonaStore()
 
@@ -31,7 +31,7 @@ const motionGraphics = [
   {
     title: 'CLG Overwatch Intro',
     filename: 'CLG_Overwatch_Intro.gif',
-    description: "Intro motion graphic for CLG's Overwatch team",
+    description: 'Intro motion graphic for CLG\'s Overwatch team',
   },
   {
     title: 'Yas or Nah',
@@ -64,14 +64,16 @@ const youtubeVideos = [
   <div class="container mx-auto space-y-20 py-16">
     <!-- Motion Graphics Gallery -->
     <section>
-      <BaseTitle class="mb-8">Motion Graphics</BaseTitle>
+      <BaseTitle class="mb-8">
+        Motion Graphics
+      </BaseTitle>
 
       <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         <div
           v-for="item in motionGraphics"
           :key="item.filename"
           class="group relative overflow-hidden rounded-lg bg-black/50 transition-all duration-100 hover:scale-105 hover:transform"
-          :style="{ borderColor: personaStore.theme.accent + '30' }"
+          :style="{ borderColor: `${personaStore.theme.accent}30` }"
         >
           <!-- GIF Container -->
           <div class="relative aspect-video overflow-hidden">
@@ -80,7 +82,7 @@ const youtubeVideos = [
               :alt="item.title"
               class="size-full object-cover transition-transform duration-100 group-hover:scale-105"
               loading="lazy"
-            />
+            >
           </div>
 
           <!-- Title overlay on hover -->
@@ -102,14 +104,16 @@ const youtubeVideos = [
 
     <!-- YouTube Videos Section -->
     <section>
-      <BaseTitle class="mb-8">Edits</BaseTitle>
+      <BaseTitle class="mb-8">
+        Edits
+      </BaseTitle>
 
       <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
         <div
           v-for="video in youtubeVideos"
           :key="video.videoId"
           class="group relative overflow-hidden rounded-lg bg-black/50"
-          :style="{ borderColor: personaStore.theme.accent + '30' }"
+          :style="{ borderColor: `${personaStore.theme.accent}30` }"
         >
           <!-- YouTube Embed Container -->
           <div class="relative aspect-video overflow-hidden">
@@ -125,7 +129,7 @@ const youtubeVideos = [
           </div>
 
           <!-- Video Info -->
-          <div class="border-t p-4" :style="{ borderColor: personaStore.theme.accent + '30' }">
+          <div class="border-t p-4" :style="{ borderColor: `${personaStore.theme.accent}30` }">
             <h4 class="mb-2 font-semibold" :style="{ color: personaStore.theme.text }">
               {{ video.title }}
             </h4>
@@ -139,7 +143,9 @@ const youtubeVideos = [
 
     <!-- WIP -->
     <section class="py-12 text-center">
-      <p class="text-lg italic opacity-80 md:text-xl">This is a work in progress.</p>
+      <p class="text-lg italic opacity-80 md:text-xl">
+        This is a work in progress.
+      </p>
       <p class="text-base italic opacity-40 md:text-lg">
         More editor content coming soon! Stay tuned.
       </p>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import PersonaGalleryTimeline from '@/components/PersonaGalleryTimeline.vue'
 import CodeBlocks from '@/components/Developer/CodeBlocks.vue'
 import TechStack from '@/components/Developer/TechStack.vue'
+import PersonaGalleryTimeline from '@/components/PersonaGalleryTimeline.vue'
 </script>
 
 <template>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { usePersonaStore } from '@/stores/persona'
 import { useAssetPath } from '@/composables/useAssetPath'
+import { usePersonaStore } from '@/stores/persona'
 
 const personaStore = usePersonaStore()
 
@@ -22,7 +22,7 @@ const socialLinks = [
   },
 ]
 
-const downloadCV = () => {
+function downloadCV() {
   const cvPath = useAssetPath('/cv.pdf')
 
   // Temporary link element to trigger download
@@ -69,13 +69,12 @@ const downloadCV = () => {
 
         <!-- CV Download Button -->
         <button
-          @click="downloadCV"
-          class="flex cursor-pointer items-center space-x-2 rounded-lg border bg-transparent px-4 py-2 text-sm font-medium hover:bg-gray-900"
+          class="flex cursor-pointer items-center space-x-2 rounded-lg border bg-transparent px-4 py-2 text-sm font-medium hover:bg-gray-900 hover:bg-opacity-10"
           :style="{
             borderColor: personaStore.theme.primary,
             color: personaStore.theme.primary,
           }"
-          :class="{ 'hover:bg-opacity-10': true }"
+          @click="downloadCV"
         >
           <!-- Download icon -->
           <svg
@@ -98,7 +97,9 @@ const downloadCV = () => {
 
       <!-- Copyright -->
       <div class="mt-6 text-center">
-        <p class="text-sm text-gray-700">© {{ new Date().getFullYear() }} Louis Lascelles-Palys</p>
+        <p class="text-sm text-gray-700">
+          © {{ new Date().getFullYear() }} Louis Lascelles-Palys
+        </p>
       </div>
     </div>
   </footer>

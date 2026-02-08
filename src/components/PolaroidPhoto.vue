@@ -17,7 +17,7 @@ const props = withDefaults(defineProps<Props>(), {
   >
     <!-- Image container -->
     <div class="size-64 overflow-hidden bg-gray-800 lg:size-90">
-      <img :src="props.imagePath" :alt="'Polaroid photo'" class="size-full object-cover" />
+      <img :src="props.imagePath" alt="Polaroid photo" class="size-full object-cover">
     </div>
   </figure>
 </template>

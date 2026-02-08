@@ -14,7 +14,7 @@ const personaStore = usePersonaStore()
   >
     <!-- Animated background gradient -->
     <div
-      :class="['absolute inset-0 opacity-20', `bg-gradient-to-br ${personaStore.theme.gradient}`]"
+      class="absolute inset-0 opacity-20" :class="[`bg-gradient-to-br ${personaStore.theme.gradient}`]"
     />
 
     <!-- Persona-specific overlays -->

@@ -74,7 +74,7 @@ const sortedEvents = computed(() => {
   return [...events].sort((a, b) => b.yearStart - a.yearStart)
 })
 
-const isEventHighlighted = (event: TimelineEvent) => {
+function isEventHighlighted(event: TimelineEvent) {
   return event.personas.includes(personaStore.currentPersona)
 }
 </script>
@@ -93,8 +93,7 @@ const isEventHighlighted = (event: TimelineEvent) => {
       <div
         v-for="event in sortedEvents"
         :key="event.id"
-        :class="[
-          'relative transition-all duration-300',
+        class="relative transition-all duration-300" :class="[
           isEventHighlighted(event) ? 'pl-16' : 'pl-8',
         ]"
       >
@@ -107,10 +106,10 @@ const isEventHighlighted = (event: TimelineEvent) => {
               : 'scale-50',
           ]"
           :style="{
-            backgroundColor: isEventHighlighted(event)
+            'backgroundColor': isEventHighlighted(event)
               ? personaStore.theme.primary
               : personaStore.theme.accent,
-            borderColor: '#0a0a0a',
+            'borderColor': '#0a0a0a',
             '--tw-ring-color': personaStore.theme.accent,
           }"
         />
@@ -130,9 +129,7 @@ const isEventHighlighted = (event: TimelineEvent) => {
             :style="{ color: personaStore.theme.accent }"
           >
             {{ event.yearStart
-            }}<span v-if="event.yearEnd"
-              ><span class="px-1 opacity-40">-</span>{{ event.yearEnd }}</span
-            >
+            }}<span v-if="event.yearEnd"><span class="px-1 opacity-40">-</span>{{ event.yearEnd }}</span>
           </div>
 
           <!-- Title -->

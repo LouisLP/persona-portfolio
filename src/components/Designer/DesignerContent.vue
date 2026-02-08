@@ -13,7 +13,9 @@ import PersonaGalleryTimeline from '@/components/PersonaGalleryTimeline.vue'
 
   <!-- WIP -->
   <section class="py-12 text-center">
-    <p class="text-lg italic opacity-80 md:text-xl">This is a work in progress.</p>
+    <p class="text-lg italic opacity-80 md:text-xl">
+      This is a work in progress.
+    </p>
     <p class="text-base italic opacity-40 md:text-lg">
       More designer content coming soon! Stay tuned.
     </p>
