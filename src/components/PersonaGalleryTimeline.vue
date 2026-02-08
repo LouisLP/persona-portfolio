@@ -65,12 +65,14 @@ const currentPhotos = computed(() => {
   <div class="mx-auto space-y-20 py-16 md:container">
     <!-- Blurb/Photos & Timeline -->
     <section class="grid grid-cols-1 items-center gap-12 md:grid-cols-5">
-      <div class="col-span-5 space-y-6 lg:col-span-3">
+      <div class="col-span-5 space-y-6 lg:col-span-3 px-0 md:px-12">
         <!-- Title/blurb -->
-        <BaseTitle>{{ title }}</BaseTitle>
+        <BaseTitle class="mx-6 md:mx-0">
+          {{ title }}
+        </BaseTitle>
 
         <div
-          class="space-y-4 px-6 text-lg leading-relaxed"
+          class="space-y-4 mx-6 md:mx-0 text-lg leading-relaxed"
           :style="{ color: personaStore.theme.text }"
         >
           <p>{{ description }}</p>
@@ -85,7 +87,7 @@ const currentPhotos = computed(() => {
             :key="`${personaStore.currentPersona}-${index}`"
             :image-path="photo.imagePath"
             :rotation="photo.rotation"
-            class="flex-shrink-0"
+            class="shrink-0"
           />
         </div>
       </div>
