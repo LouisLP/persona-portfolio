@@ -24,16 +24,16 @@ const skills = {
 
 const projects = [
   {
-    name: 'Publication & Directed Studies',
-    year: 2023,
+    name: 'Agile Data Hub',
+    year: 2025,
     description:
-      'Directed studies at UBC under Dr. Ramon Lawrence — gaining industry-level experience in system administration and backend development. Later co-authored a paper titled "Live Session Gamification using PrairieLearn".',
+      'Marketplace for robot "task" datasets at AgileRobots, enabling users to browse and purchase pre-recorded robot actions. Built with Nuxt, Tailwind, Prisma (SQLite), BetterAuth, and Stripe.',
   },
   {
-    name: 'PrairieLearn Ranked',
+    name: 'PrairieLearn Ranked & Publication',
     year: 2023,
     description:
-      'Capstone project at UBC, creating a ranking system for the PrairieLearn quizzing platform to help students gauge performance in live and asynchronous settings.',
+      'Capstone project at UBC creating a ranking system for the PrairieLearn quizzing platform, extended through directed studies under Dr. Ramon Lawrence. Later co-authored a paper titled "Live Session Gamification using PrairieLearn".',
   },
 ]
 </script>
