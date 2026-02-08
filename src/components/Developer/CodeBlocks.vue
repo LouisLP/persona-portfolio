@@ -79,7 +79,7 @@ const projects = [
     </section>
 
     <!-- Skills & Projects Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
       <!-- Skills Code Block -->
       <div
         class="font-developer w-full rounded-xl border p-8 shadow-2xl backdrop-blur-sm"
