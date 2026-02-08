@@ -61,7 +61,7 @@ const youtubeVideos = [
     description="I've been editing since I was 10, starting with YouTube guides and eventually transitioning into professional video and motion design work for major esports organizations. That long history of creative storytelling through video gives me a deep intuition for pacing, narrative, and visual impact."
   />
 
-  <div class="container mx-auto space-y-20 py-16">
+  <div class="mx-auto space-y-16 px-6 py-16 md:container md:px-16">
     <!-- Motion Graphics Gallery -->
     <section>
       <BaseTitle class="mb-8">
