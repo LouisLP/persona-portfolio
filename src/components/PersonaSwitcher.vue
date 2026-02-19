@@ -24,7 +24,7 @@ async function switchPersona(persona: PersonaType) {
         :key="persona.type"
         class="cursor-pointer rounded-full font-medium transition-all duration-100 hover:scale-105 active:scale-95 px-3 py-2 text-sm lg:px-6 lg:py-3 lg:text-base" :class="[
           personaStore.currentPersona === persona.type
-            ? `bg-gradient-to-r ${personaStore.theme.gradient} text-white shadow-lg`
+            ? `bg-linear-to-t ${personaStore.theme.gradient} text-white shadow-lg`
             : 'text-gray-400 hover:bg-white/5 hover:text-white',
         ]"
         @click="switchPersona(persona.type)"

@@ -27,7 +27,7 @@ const themes: Record<PersonaType, PersonaTheme> = {
     accent: '#fca5a5',
     background: '#1a1a1a',
     text: '#f5f5f5',
-    gradient: 'from-red-600 to-orange-500',
+    gradient: 'from-red-600/40 to-orange-500/40',
     fontFamily: 'editor',
   },
   designer: {
@@ -36,7 +36,7 @@ const themes: Record<PersonaType, PersonaTheme> = {
     accent: '#c4b5fd',
     background: '#0f0f23',
     text: '#f5f5f5',
-    gradient: 'from-purple-600 to-pink-500',
+    gradient: 'from-purple-600/40 to-pink-500/40',
     fontFamily: 'designer',
   },
   developer: {
@@ -45,7 +45,7 @@ const themes: Record<PersonaType, PersonaTheme> = {
     accent: '#93c5fd',
     background: '#0a0a0a',
     text: '#f5f5f5',
-    gradient: 'from-blue-600 to-cyan-500',
+    gradient: 'from-blue-600/40 to-cyan-500/40',
     fontFamily: 'developer',
   },
 }

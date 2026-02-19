@@ -12,9 +12,9 @@ const personaStore = usePersonaStore()
     class="relative flex min-h-screen items-center justify-center overflow-hidden transition-colors duration-700"
     :style="{ backgroundColor: personaStore.theme.background }"
   >
-    <!-- Animated background gradient -->
+    <!-- Background gradient -->
     <div
-      class="absolute inset-0 opacity-20" :class="[`bg-gradient-to-br ${personaStore.theme.gradient}`]"
+      class="absolute inset-0 opacity-20" :class="[`bg-linear-to-br ${personaStore.theme.gradient}`]"
     />
 
     <!-- Persona-specific overlays -->
@@ -24,26 +24,26 @@ const personaStore = usePersonaStore()
 
     <!-- Content -->
     <div class="relative z-10 mx-auto max-w-4xl px-6 text-center">
-      <!-- Persona Title with transition -->
+      <!-- Persona Title -->
       <h1
         :key="personaStore.currentPersona"
         class="mb-6 text-6xl font-bold transition-all duration-500 md:text-8xl"
         :style="{ color: personaStore.theme.text }"
       >
         Louis the
-        <div
+        <p
           :class="[
-            `bg-gradient-to-r ${personaStore.theme.gradient}`,
             {
               'font-designer': personaStore.currentPersona === 'designer',
               'font-developer': personaStore.currentPersona === 'developer',
               'font-editor': personaStore.currentPersona === 'editor',
             },
           ]"
-          class="mx-auto w-fit rounded-2xl px-4"
+          class="mx-auto w-fit rounded-2xl px-6 bg-black/90"
+          :style="{ color: personaStore.theme.text }"
         >
           {{ personaStore.personaContent.title }}
-        </div>
+        </p>
       </h1>
 
       <!-- Description -->
