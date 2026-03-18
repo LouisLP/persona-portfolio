@@ -45,6 +45,14 @@ const designs = ref<DesignMeta[]>([
     client: 'Bending Spoons',
     tags: ['Mobile', 'UI Design', 'Figma'],
   },
+  {
+    imagePath: useAssetPath('/designs/prairielearn-live-scoreboard.png'),
+    title: 'PrairieLearn Live Scoreboard',
+    description: 'Scoreboard mockup for the PrairieLearn quizzing platform.',
+    year: '2022',
+    client: 'University of British Columbia',
+    tags: ['Desktop', 'UI/UX', 'Bootstrap'],
+  },
 ])
 </script>
 
