@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import DesignProcessShowcase from '@/components/Designer/DesignProcessShowcase.vue'
+import DesignProcessShowcase from '@/components/Designer/DesignProcess/DesignProcessShowcase.vue'
 import PersonaGalleryTimeline from '@/components/PersonaGalleryTimeline.vue'
 </script>
 
