@@ -47,7 +47,7 @@ const photoSets = {
   ],
   developer: [
     { imagePath: useAssetPath('/polaroid_photos/developer/Timbits.jpg'), rotation: -4 },
-    { imagePath: useAssetPath('/polaroid_photos/developer/Japan.jpg'), rotation: 2 },
+    { imagePath: useAssetPath('/polaroid_photos/developer/Agile_team_event.jpg'), rotation: 2 },
     { imagePath: useAssetPath('/polaroid_photos/developer/SFU.jpg'), rotation: -1 },
     { imagePath: useAssetPath('/polaroid_photos/developer/Jobreel_Photo.jpg'), rotation: 3 },
   ],
