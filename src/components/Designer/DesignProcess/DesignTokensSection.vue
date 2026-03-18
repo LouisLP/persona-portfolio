@@ -57,7 +57,7 @@ const personaStore = usePersonaStore()
             target="_blank"
             rel="noopener"
           >corner-shape</a>
-          is promising in modern CSS but not yet available in Firefox.
+          is promising in modern CSS but not yet available in Firefox (my main browser).
         </p>
         <div class="flex flex-wrap gap-4">
           <div
