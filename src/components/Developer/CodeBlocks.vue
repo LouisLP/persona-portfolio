@@ -178,7 +178,7 @@ function openDocumentation(url: string) {
               </span>
 
               <!-- Tooltip on hover -->
-              <div
+              <!-- <div
                 v-if="hoveredTech === tech.name"
                 class="absolute left-0 top-full mt-2 z-10 w-64 rounded-lg border border-gray-700/50 bg-gray-900/95 p-3 shadow-xl backdrop-blur-sm"
                 :style="{
@@ -191,7 +191,7 @@ function openDocumentation(url: string) {
                 <p class="text-xs text-gray-500">
                   Click to view docs →
                 </p>
-              </div>
+              </div> -->
             </div>
           </div>
 
