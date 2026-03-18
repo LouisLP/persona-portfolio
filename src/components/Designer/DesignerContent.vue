@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import DesignProcessShowcase from '@/components/Designer/DesignProcess/DesignProcessShowcase.vue'
+import FullDesignsShowcase from '@/components/Designer/FullDesignsShowcase.vue'
 import PersonaGalleryTimeline from '@/components/PersonaGalleryTimeline.vue'
 </script>
 
@@ -10,4 +11,6 @@ import PersonaGalleryTimeline from '@/components/PersonaGalleryTimeline.vue'
   />
 
   <DesignProcessShowcase />
+
+  <FullDesignsShowcase />
 </template>
