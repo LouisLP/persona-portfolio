@@ -46,6 +46,14 @@ const designs = ref<DesignMeta[]>([
     tags: ['Mobile', 'UI Design', 'Figma'],
   },
   {
+    imagePath: useAssetPath('/designs/avayl-layout-option.png'),
+    title: 'Avayl Layout Option',
+    description: 'Testing out potential layout options for AVAYL\'s interface.',
+    year: '2024',
+    client: 'AVAYL',
+    tags: ['Desktop', 'UI Design', 'Figma'],
+  },
+  {
     imagePath: useAssetPath('/designs/prairielearn-live-scoreboard.png'),
     title: 'PrairieLearn Live Scoreboard',
     description: 'Scoreboard mockup for the PrairieLearn quizzing platform.',
