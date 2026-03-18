@@ -47,7 +47,7 @@ const skills = {
     'Testing',
     'Documentation',
   ],
-  frontend: ['Vue', 'React', 'HTML/CSS', 'Tailwind'],
+  frontend: ['Vue', 'React', 'HTML/CSS', 'Tailwind', 'Storybook', 'Figma'],
   backend: ['Node.js', 'API Development', 'Docker'],
   meta: ['Nuxt'],
   databases: ['MySQL', 'PostgreSQL', 'MongoDB', 'Database Design', 'Database Migrations'],
