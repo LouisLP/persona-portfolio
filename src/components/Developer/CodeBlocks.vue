@@ -1,32 +1,25 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
-import { ref } from 'vue'
-
-const hoveredTech = ref<string | null>(null)
 
 const techStack = [
   {
     name: 'Vue.js',
     url: 'https://vuejs.org',
-    description: 'Progressive JavaScript framework for building user interfaces',
     icon: 'mdi:vuejs',
   },
   {
     name: 'TypeScript',
     url: 'https://www.typescriptlang.org',
-    description: 'Typed superset of JavaScript that compiles to plain JavaScript',
     icon: 'lineicons:typescript',
   },
   {
     name: 'Tailwind CSS',
     url: 'https://tailwindcss.com',
-    description: 'Utility-first CSS framework for rapid UI development',
     icon: 'mdi:tailwind',
   },
   {
     name: 'Node.js',
     url: 'https://nodejs.org',
-    description: 'JavaScript runtime built on Chrome\'s V8 JavaScript engine',
     icon: 'mdi:nodejs',
   },
 ]
@@ -64,10 +57,6 @@ const projects = [
       'Capstone project at UBC creating a ranking system for the PrairieLearn quizzing platform, extended through directed studies under Dr. Ramon Lawrence. Later co-authored a paper titled "Live Session Gamification using PrairieLearn".',
   },
 ]
-
-function openDocumentation(url: string) {
-  window.open(url, '_blank')
-}
 </script>
 
 <template>
@@ -139,13 +128,13 @@ function openDocumentation(url: string) {
           </header>
 
           <div class="ml-6 grid grid-cols-2 gap-3">
-            <div
+            <a
               v-for="tech in techStack"
               :key="tech.name"
-              class="group relative flex cursor-pointer items-center gap-3 rounded-md border border-line p-3 transition-colors duration-200 hover:border-accent"
-              @mouseenter="hoveredTech = tech.name"
-              @mouseleave="hoveredTech = null"
-              @click="openDocumentation(tech.url)"
+              :href="tech.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group flex items-center gap-3 rounded-md border border-line p-3 transition-colors duration-200 hover:border-accent"
             >
               <!-- Icon -->
               <Icon
@@ -157,20 +146,7 @@ function openDocumentation(url: string) {
               <span class="text-code-string">
                 '{{ tech.name }}'
               </span>
-
-              <!-- Tooltip on hover -->
-              <!-- <div
-                v-if="hoveredTech === tech.name"
-                class="absolute left-0 top-full mt-2 z-10 w-64 rounded-md border border-line bg-surface p-3"
-              >
-                <p class="text-xs leading-relaxed text-ink-muted mb-2">
-                  {{ tech.description }}
-                </p>
-                <p class="text-xs text-ink-subtle">
-                  Click to view docs →
-                </p>
-              </div> -->
-            </div>
+            </a>
           </div>
 
           <div class="mt-4 text-accent">

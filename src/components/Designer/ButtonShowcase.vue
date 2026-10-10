@@ -30,8 +30,8 @@ props.variants.forEach((variant) => {
 
 <template>
   <div
-    class="relative overflow-hidden rounded-2xl px-6 py-12"
-    :class="`bg-gradient-to-br ${gradientFrom} ${gradientVia} ${gradientTo}`"
+    class="relative overflow-hidden rounded-2xl bg-gradient-to-br px-6 py-12"
+    :class="[gradientFrom, gradientVia, gradientTo]"
   >
     <!-- Animated background elements -->
     <div class="absolute inset-0 opacity-20">

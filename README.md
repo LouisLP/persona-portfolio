@@ -20,10 +20,14 @@ Components use the semantic utilities (`bg-canvas`, `bg-surface`, `border-line`,
 
 ## Development
 
+Needs Node 22.12+ (CI runs 24, see `.nvmrc`).
+
 ```sh
 npm install
-npm run dev
-npm run build
+npm run dev      # local dev server
+npm test         # Vitest
+npm run lint     # ESLint via @antfu/eslint-config (also handles formatting)
+npm run build    # type-check, then production build
 ```
 
 ## Deployment

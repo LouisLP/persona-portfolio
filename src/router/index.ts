@@ -1,94 +1,41 @@
-import type { RouteRecordRaw } from 'vue-router'
+import type { PersonaType } from '@/stores/persona'
 import { createRouter, createWebHistory } from 'vue-router'
+import { PERSONAS, usePersonaStore } from '@/stores/persona'
 
-const routes: Array<RouteRecordRaw> = [
-  {
-    path: '/',
-    redirect: '/developer', // Default persona
-  },
-  {
-    path: '/editor',
-    name: 'Editor',
-    component: () => import('@/views/PersonaView.vue'),
-    meta: { persona: 'editor' },
-  },
-  // {
-  //   path: '/editor/projects',
-  //   name: 'EditorProjects',
-  //   component: () => import('@/views/ProjectsView.vue'),
-  //   meta: { persona: 'editor' },
-  // },
-  {
-    path: '/designer',
-    name: 'Designer',
-    component: () => import('@/views/PersonaView.vue'),
-    meta: { persona: 'designer' },
-  },
-  // {
-  //   path: '/designer/portfolio',
-  //   name: 'DesignerPortfolio',
-  //   component: () => import('@/views/PortfolioView.vue'),
-  //   meta: { persona: 'designer' },
-  // },
-  {
-    path: '/developer',
-    name: 'Developer',
-    component: () => import('@/views/PersonaView.vue'),
-    meta: { persona: 'developer' },
-  },
-  // {
-  //   path: '/developer/projects',
-  //   name: 'DeveloperProjects',
-  //   component: () => import('@/views/ProjectsView.vue'),
-  //   meta: { persona: 'developer' },
-  // },
-  // Shared routes
-  // {
-  //   path: '/:persona/about',
-  //   name: 'About',
-  //   component: () => import('@/views/AboutView.vue'),
-  // },
-  // {
-  //   path: '/:persona/contact',
-  //   name: 'Contact',
-  //   component: () => import('@/views/ContactView.vue'),
-  // },
-]
+declare module 'vue-router' {
+  interface RouteMeta {
+    persona?: PersonaType
+  }
+}
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes,
+  routes: [
+    ...PERSONAS.map(persona => ({
+      path: `/${persona}`,
+      name: persona,
+      component: () => import('@/views/PersonaView.vue'),
+      meta: { persona },
+    })),
+    { path: '/:pathMatch(.*)*', redirect: '/developer' },
+  ],
   scrollBehavior(to, from, savedPosition) {
-    // If there's a saved position (browser back/forward), use it
-    if (savedPosition) {
+    // Browser back/forward restores the previous position
+    if (savedPosition)
       return savedPosition
-    }
 
-    // If switching between personas, maintain current scroll position
-    if (to.meta.persona && from.meta.persona && to.meta.persona !== from.meta.persona) {
-      return false // Prevents any scroll behavior change
-    }
+    // Switching persona keeps the reader where they are
+    if (to.meta.persona && from.meta.persona)
+      return false
 
-    // For other navigation, scroll to top
-    return { top: 0, behavior: 'smooth' }
+    return { top: 0 }
   },
 })
 
-// Navigation guard to sync persona with route
-router.beforeEach(async (to, from, next) => {
-  const { usePersonaStore } = await import('@/stores/persona')
-  const personaStore = usePersonaStore()
-
-  const persona = to.meta.persona || to.params.persona
-
-  if (persona && typeof persona === 'string') {
-    const validPersonas = ['editor', 'designer', 'developer']
-    if (validPersonas.includes(persona)) {
-      personaStore.setPersona(persona as 'editor' | 'designer' | 'developer')
-    }
-  }
-
-  next()
+// The route is the source of truth for the active persona
+router.beforeEach((to) => {
+  if (to.meta.persona)
+    usePersonaStore().setPersona(to.meta.persona)
 })
 
 export default router

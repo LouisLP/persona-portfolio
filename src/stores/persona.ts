@@ -1,7 +1,9 @@
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 
-export type PersonaType = 'editor' | 'designer' | 'developer'
+export const PERSONAS = ['developer', 'editor', 'designer'] as const
+
+export type PersonaType = (typeof PERSONAS)[number]
 
 export interface PersonaContent {
   title: string
@@ -43,24 +45,14 @@ export const usePersonaStore = defineStore('persona', () => {
   // Getters
   const personaContent = computed(() => content[currentPersona.value])
 
-  const allPersonas = computed(() => [
-    { type: 'developer' as PersonaType, label: 'Developer' },
-    { type: 'editor' as PersonaType, label: 'Editor' },
-    { type: 'designer' as PersonaType, label: 'Designer' },
-  ])
-
   // Actions
-  const setPersona = async (persona: PersonaType) => {
-    if (persona === currentPersona.value)
-      return
-
+  function setPersona(persona: PersonaType) {
     currentPersona.value = persona
   }
 
   return {
     currentPersona,
     personaContent,
-    allPersonas,
     setPersona,
   }
 })

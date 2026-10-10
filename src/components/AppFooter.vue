@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
-import { useAssetPath } from '@/composables/useAssetPath'
+import { assetPath } from '@/utils/assetPath'
 
 const socialLinks = [
   {
@@ -20,17 +20,7 @@ const socialLinks = [
   },
 ]
 
-function downloadCV() {
-  const cvPath = useAssetPath('/cv.pdf')
-
-  // Temporary link element to trigger download
-  const link = document.createElement('a')
-  link.href = cvPath
-  link.download = 'Louis_Lascelles-Palys_CV.pdf' // Custom filename for download
-  document.body.appendChild(link)
-  link.click()
-  document.body.removeChild(link)
-}
+const cvPath = assetPath('/cv.pdf')
 </script>
 
 <template>
@@ -55,14 +45,14 @@ function downloadCV() {
           © {{ new Date().getFullYear() }} Louis Lascelles-Palys
         </p>
 
-        <button
-          type="button"
-          class="flex cursor-pointer items-center gap-2 rounded-md border border-line px-3 py-1.5 text-sm font-medium text-ink transition-colors duration-200 hover:border-accent hover:text-accent"
-          @click="downloadCV"
+        <a
+          :href="cvPath"
+          download="Louis_Lascelles-Palys_CV.pdf"
+          class="flex items-center gap-2 rounded-md border border-line px-3 py-1.5 text-sm font-medium text-ink transition-colors duration-200 hover:border-accent hover:text-accent"
         >
           <Icon class="size-4" icon="mdi:tray-arrow-down" />
           <span>Download CV</span>
-        </button>
+        </a>
       </div>
     </div>
   </footer>

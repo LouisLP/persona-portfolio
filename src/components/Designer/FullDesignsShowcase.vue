@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import BaseTitle from '@/components/Base/BaseTitle.vue'
-import { useAssetPath } from '@/composables/useAssetPath'
+import { assetPath } from '@/utils/assetPath'
 
 interface DesignMeta {
   imagePath: string
@@ -12,9 +11,9 @@ interface DesignMeta {
   tags?: string[]
 }
 
-const designs = ref<DesignMeta[]>([
+const designs: DesignMeta[] = [
   {
-    imagePath: useAssetPath('/designs/agile-data-hub-receipt.png'),
+    imagePath: assetPath('/designs/agile-data-hub-receipt.png'),
     title: 'Agile Data Hub Receipt',
     description: 'Agile Robots was ideating a shop interface, and I designed/developed a receipt.',
     year: '2025',
@@ -22,7 +21,7 @@ const designs = ref<DesignMeta[]>([
     tags: ['Desktop', 'UI/UX', 'Frontend'],
   },
   {
-    imagePath: useAssetPath('/designs/jobreel-match-previews.png'),
+    imagePath: assetPath('/designs/jobreel-match-previews.png'),
     title: 'Jobreel Match Previews',
     description: 'Before signing up for Jobreel, users can preview which employers they\'ll match with.',
     year: '2024',
@@ -30,7 +29,7 @@ const designs = ref<DesignMeta[]>([
     tags: ['Desktop', 'UI/UX', 'Frontend'],
   },
   {
-    imagePath: useAssetPath('/designs/Eclectique.png'),
+    imagePath: assetPath('/designs/Eclectique.png'),
     title: 'Mobile Ideation: Eclectique',
     description: 'Subscription-based vintage clothing marketplace.',
     year: '2024',
@@ -38,7 +37,7 @@ const designs = ref<DesignMeta[]>([
     tags: ['Mobile', 'UI Design', 'Figma'],
   },
   {
-    imagePath: useAssetPath('/designs/Quazara.png'),
+    imagePath: assetPath('/designs/Quazara.png'),
     title: 'Mobile Ideation: Quazara',
     description: 'Subscription-based gaming library.',
     year: '2024',
@@ -46,7 +45,7 @@ const designs = ref<DesignMeta[]>([
     tags: ['Mobile', 'UI Design', 'Figma'],
   },
   {
-    imagePath: useAssetPath('/designs/avayl-layout-option.png'),
+    imagePath: assetPath('/designs/avayl-layout-option.png'),
     title: 'Avayl Layout Option',
     description: 'Testing out potential layout options for AVAYL\'s interface.',
     year: '2024',
@@ -54,14 +53,14 @@ const designs = ref<DesignMeta[]>([
     tags: ['Desktop', 'UI Design', 'Figma'],
   },
   {
-    imagePath: useAssetPath('/designs/prairielearn-live-scoreboard.png'),
+    imagePath: assetPath('/designs/prairielearn-live-scoreboard.png'),
     title: 'PrairieLearn Live Scoreboard',
     description: 'Scoreboard mockup for the PrairieLearn quizzing platform.',
     year: '2022',
     client: 'University of British Columbia',
     tags: ['Desktop', 'UI/UX', 'Bootstrap'],
   },
-])
+]
 </script>
 
 <template>

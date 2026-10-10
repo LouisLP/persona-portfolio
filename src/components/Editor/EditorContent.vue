@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import BaseTitle from '@/components/Base/BaseTitle.vue'
 import PersonaGalleryTimeline from '@/components/PersonaGalleryTimeline.vue'
-import { useAssetPath } from '@/composables/useAssetPath'
+import { assetPath } from '@/utils/assetPath'
 
 // Motion graphics gallery items
 const motionGraphics = [
@@ -41,12 +41,12 @@ const motionGraphics = [
 const youtubeVideos = [
   {
     title: 'Misfit Story: Sceptic',
-    videoId: '9XBLhulJE8s', // Replace with actual video ID
+    videoId: '9XBLhulJE8s',
     description: 'Misfits Gaming documentary for Fortnite player Sceptic',
   },
   {
     title: 'Misfits Story: Clix',
-    videoId: 'HSJfp8HW7Q0', // Replace with actual video ID
+    videoId: 'HSJfp8HW7Q0',
     description: 'Misfits Gaming documentary for Fortnite player Clix',
   },
 ]
@@ -74,7 +74,7 @@ const youtubeVideos = [
           <!-- GIF Container -->
           <div class="relative aspect-video overflow-hidden">
             <img
-              :src="useAssetPath(`/motion_graphics_gifs/${item.filename}`)"
+              :src="assetPath(`/motion_graphics_gifs/${item.filename}`)"
               :alt="item.title"
               class="size-full object-cover"
               loading="lazy"
