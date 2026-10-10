@@ -1,46 +1,39 @@
 # Persona Portfolio
 
-A dynamic portfolio website that showcases three professional personas through an interactive, theme-switching interface. Built with Vue 3, TypeScript, and Tailwind CSS.
+My portfolio, split into the three hats I've worn: **developer**, **editor**, and **designer**. Each persona has its own route (`/developer`, `/editor`, `/designer`), career highlights, photos, and showcase work.
 
-## 🎭 About
+Built with Vue 3, TypeScript, Tailwind CSS v4, Pinia, Vue Router, and Vite.
 
-This portfolio presents my professional journey through three distinct personas:
+## Design system
 
-- **👨‍💻 Developer** - Full-stack development with frontend focus
-- **🎬 Editor** - Video editing and motion graphics expertise
-- **🎨 Designer** - UI/UX and interactive design background
+One system, three accents. Every colour token in `src/styles.css` derives from a single `--hue` in `oklch`, so the personas share lightness and chroma and only differ in hue (250 for developer, 28 for editor, 290 for designer). Switching persona sets `data-persona` on `<html>` and the whole page follows, with no colour values living in JavaScript.
 
-Each persona features its own visual theme, typography, background overlays, and curated content including career timelines, photo galleries, and skill showcases.
+Body copy is always [Instrument Sans](https://fontsource.org/fonts/instrument-sans). Each persona gets its own display face for headings:
 
-## ✨ Features
+- Developer: [IBM Plex Mono](https://fontsource.org/fonts/ibm-plex-mono)
+- Editor: [Instrument Serif](https://fontsource.org/fonts/instrument-serif)
+- Designer: [Bricolage Grotesque](https://fontsource.org/fonts/bricolage-grotesque)
 
-- **Dynamic Theme Switching** - Each persona has unique colors, fonts, and visual elements
-- **Interactive Timeline** - Career events highlight based on selected persona
-- **Responsive Photo Galleries** - Polaroid-style photos with persona-specific content
-- **Background Overlays** - Code lines for developer, grid for designer, film strips for editor
-- **Route-based Navigation** - Direct URLs for each persona (`/developer`, `/designer`, `/editor`)
+Fonts are self-hosted through Fontsource, so they respect Vite's `base` path on GitHub Pages.
 
-## 🛠 Tech Stack
+Components use the semantic utilities (`bg-canvas`, `bg-surface`, `border-line`, `text-ink`, `text-ink-muted`, `text-ink-subtle`, `text-accent`, `font-display`) rather than raw Tailwind palette colours.
 
-- **Vue 3** with Composition API
-- **TypeScript** for type safety
-- **Tailwind CSS** for styling
-- **Pinia** for state management
-- **Vue Router** for navigation
-- **Vite** for development and building
+## Development
 
-## 🎨 Design System
+Needs Node 22.12+ (CI runs 24, see `.nvmrc`).
 
-Each persona maintains its own design system:
+```sh
+npm install
+npm run dev      # local dev server
+npm test         # Vitest
+npm run lint     # ESLint via @antfu/eslint-config (also handles formatting)
+npm run build    # type-check, then production build
+```
 
-- **Fonts**: Fira Code (Developer), Archivo (Designer), Domine (Editor)
-- **Colors**: Blue theme (Developer), Purple theme (Designer), Red theme (Editor)
-- **Overlays**: Code lines, Grid pattern, Film strips respectively
+## Deployment
 
-## 🌐 Deployment
+Pushing to `main` deploys to GitHub Pages via `.github/workflows/deploy.yml`.
 
-The site is configured for GitHub Pages deployment with automated workflows. Push to `main` branch to trigger deployment.
+## Licence
 
-## 📄 License
-
-This project is personal portfolio code. Feel free to use as inspiration for your own portfolio!
+Personal portfolio code. Feel free to use it as inspiration for your own.

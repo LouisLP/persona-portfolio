@@ -1,16 +1,14 @@
-<script setup lang="ts">
-import { usePersonaStore } from '@/stores/persona'
-
-const personaStore = usePersonaStore()
-</script>
-
 <template>
   <!-- Designer: Grid overlay -->
-  <aside
-    class="pointer-events-none absolute inset-0 opacity-5"
-    :style="{
-      backgroundImage: `linear-gradient(${personaStore.theme.accent} 1px, transparent 1px), linear-gradient(90deg, ${personaStore.theme.accent} 1px, transparent 1px)`,
-      backgroundSize: '60px 60px',
-    }"
-  />
+  <aside aria-hidden="true" class="design-grid pointer-events-none absolute inset-0" />
 </template>
+
+<style scoped>
+.design-grid {
+  opacity: 0.06;
+  background-image:
+    linear-gradient(var(--ink) 1px, transparent 1px),
+    linear-gradient(90deg, var(--ink) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+</style>

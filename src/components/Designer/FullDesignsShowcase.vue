@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import BaseTitle from '@/components/Base/BaseTitle.vue'
-import { useAssetPath } from '@/composables/useAssetPath'
+import { assetPath } from '@/utils/assetPath'
 
 interface DesignMeta {
   imagePath: string
@@ -12,9 +11,9 @@ interface DesignMeta {
   tags?: string[]
 }
 
-const designs = ref<DesignMeta[]>([
+const designs: DesignMeta[] = [
   {
-    imagePath: useAssetPath('/designs/agile-data-hub-receipt.png'),
+    imagePath: assetPath('/designs/agile-data-hub-receipt.png'),
     title: 'Agile Data Hub Receipt',
     description: 'Agile Robots was ideating a shop interface, and I designed/developed a receipt.',
     year: '2025',
@@ -22,7 +21,7 @@ const designs = ref<DesignMeta[]>([
     tags: ['Desktop', 'UI/UX', 'Frontend'],
   },
   {
-    imagePath: useAssetPath('/designs/jobreel-match-previews.png'),
+    imagePath: assetPath('/designs/jobreel-match-previews.png'),
     title: 'Jobreel Match Previews',
     description: 'Before signing up for Jobreel, users can preview which employers they\'ll match with.',
     year: '2024',
@@ -30,7 +29,7 @@ const designs = ref<DesignMeta[]>([
     tags: ['Desktop', 'UI/UX', 'Frontend'],
   },
   {
-    imagePath: useAssetPath('/designs/Eclectique.png'),
+    imagePath: assetPath('/designs/Eclectique.png'),
     title: 'Mobile Ideation: Eclectique',
     description: 'Subscription-based vintage clothing marketplace.',
     year: '2024',
@@ -38,7 +37,7 @@ const designs = ref<DesignMeta[]>([
     tags: ['Mobile', 'UI Design', 'Figma'],
   },
   {
-    imagePath: useAssetPath('/designs/Quazara.png'),
+    imagePath: assetPath('/designs/Quazara.png'),
     title: 'Mobile Ideation: Quazara',
     description: 'Subscription-based gaming library.',
     year: '2024',
@@ -46,7 +45,7 @@ const designs = ref<DesignMeta[]>([
     tags: ['Mobile', 'UI Design', 'Figma'],
   },
   {
-    imagePath: useAssetPath('/designs/avayl-layout-option.png'),
+    imagePath: assetPath('/designs/avayl-layout-option.png'),
     title: 'Avayl Layout Option',
     description: 'Testing out potential layout options for AVAYL\'s interface.',
     year: '2024',
@@ -54,14 +53,14 @@ const designs = ref<DesignMeta[]>([
     tags: ['Desktop', 'UI Design', 'Figma'],
   },
   {
-    imagePath: useAssetPath('/designs/prairielearn-live-scoreboard.png'),
+    imagePath: assetPath('/designs/prairielearn-live-scoreboard.png'),
     title: 'PrairieLearn Live Scoreboard',
     description: 'Scoreboard mockup for the PrairieLearn quizzing platform.',
     year: '2022',
     client: 'University of British Columbia',
     tags: ['Desktop', 'UI/UX', 'Bootstrap'],
   },
-])
+]
 </script>
 
 <template>
@@ -69,7 +68,7 @@ const designs = ref<DesignMeta[]>([
     <!-- Section Header -->
     <section class="space-y-4">
       <BaseTitle>Full Designs</BaseTitle>
-      <p class="text-lg leading-relaxed text-gray-300">
+      <p class="max-w-2xl text-lg leading-relaxed text-pretty text-ink-muted">
         Once you have the building blocks in place, it's a matter of staying organized and
         iterating on full designs.
       </p>
@@ -84,9 +83,7 @@ const designs = ref<DesignMeta[]>([
       <div
         v-for="(design, i) in designs"
         :key="i"
-        class="group relative mb-6 break-inside-avoid overflow-hidden rounded-2xl
-               bg-linear-to-br from-white/5 to-white/2
-               transition-all duration-300 hover:shadow-2xl"
+        class="group relative mb-6 break-inside-avoid overflow-hidden rounded-lg border border-line bg-surface"
       >
         <!--
           Image fills the card width; height is entirely driven by the image's
@@ -96,7 +93,7 @@ const designs = ref<DesignMeta[]>([
         <img
           :src="design.imagePath"
           :alt="design.title"
-          class="block w-full transition-transform duration-500 group-hover:scale-[1.03]"
+          class="block w-full"
         >
 
         <!--
@@ -104,20 +101,19 @@ const designs = ref<DesignMeta[]>([
           `relative` so this covers exactly the image area regardless of its height.
         -->
         <div
-          class="absolute inset-0 flex flex-col justify-end bg-linear-to-t from-black
-                 to-black/50 p-4 opacity-0 transition-opacity duration-200
-                 group-hover:opacity-100"
+          class="absolute inset-0 flex flex-col justify-end bg-canvas/90 p-4 opacity-0
+                 transition-opacity duration-200 group-hover:opacity-100"
         >
           <div class="space-y-2">
-            <h3 class="text-base font-bold leading-snug text-white">
+            <h3 class="font-display text-base leading-snug font-medium text-ink">
               {{ design.title }}
             </h3>
-            <p class="text-xs leading-relaxed text-gray-300">
+            <p class="text-xs leading-relaxed text-ink-muted">
               {{ design.description }}
             </p>
 
             <!-- Year + client -->
-            <div class="flex flex-wrap items-center gap-3 pt-1 text-xs text-gray-400">
+            <div class="flex flex-wrap items-center gap-3 pt-1 text-xs text-ink-subtle">
               <span class="flex items-center gap-1">
                 <svg class="size-3.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" />
@@ -138,8 +134,7 @@ const designs = ref<DesignMeta[]>([
               <span
                 v-for="tag in design.tags"
                 :key="tag"
-                class="rounded-full bg-white/15 px-2 py-0.5 text-[11px] font-medium
-                       text-white backdrop-blur-sm"
+                class="rounded-sm border border-line px-1.5 py-0.5 font-mono text-[11px] text-ink-muted"
               >
                 {{ tag }}
               </span>

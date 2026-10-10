@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { computed } from 'vue'
 import BaseTitle from '@/components/Base/BaseTitle.vue'
 import CareerTimeline from '@/components/CareerTimeline.vue'
 import PolaroidPhoto from '@/components/PolaroidPhoto.vue'
-import { useAssetPath } from '@/composables/useAssetPath'
 import { usePersonaStore } from '@/stores/persona'
+import { assetPath } from '@/utils/assetPath'
 
 interface Props {
   title: string
@@ -15,50 +15,29 @@ defineProps<Props>()
 
 const personaStore = usePersonaStore()
 
-// Screen size tracking
-const screenWidth = ref(0)
-
-function updateScreenWidth() {
-  screenWidth.value = window.innerWidth
-}
-
-onMounted(() => {
-  updateScreenWidth()
-  window.addEventListener('resize', updateScreenWidth)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('resize', updateScreenWidth)
-})
-
 // Photo sets for each persona
 const photoSets = {
   editor: [
-    { imagePath: useAssetPath('/polaroid_photos/editor/CLG_Camera.jpg'), rotation: -4 },
-    { imagePath: useAssetPath('/polaroid_photos/editor/Covid_Setup_Berlin.jpg'), rotation: 2 },
-    { imagePath: useAssetPath('/polaroid_photos/editor/LEC_Studio_Room.jpg'), rotation: -1 },
-    { imagePath: useAssetPath('/polaroid_photos/editor/CLG_On_Stage.jpg'), rotation: 3 },
+    { imagePath: assetPath('/polaroid_photos/editor/CLG_Camera.jpg'), rotation: -4 },
+    { imagePath: assetPath('/polaroid_photos/editor/Covid_Setup_Berlin.jpg'), rotation: 2 },
+    { imagePath: assetPath('/polaroid_photos/editor/LEC_Studio_Room.jpg'), rotation: -1 },
+    { imagePath: assetPath('/polaroid_photos/editor/CLG_On_Stage.jpg'), rotation: 3 },
   ],
   designer: [
-    { imagePath: useAssetPath('/polaroid_photos/designer/TwitchCon_2017.jpg'), rotation: -4 },
-    { imagePath: useAssetPath('/polaroid_photos/designer/CLG_Jersey.jpg'), rotation: 2 },
-    { imagePath: useAssetPath('/polaroid_photos/designer/Fidget_Head.jpg'), rotation: -1 },
-    { imagePath: useAssetPath('/polaroid_photos/designer/Writing_On_Table.jpg'), rotation: 3 },
+    { imagePath: assetPath('/polaroid_photos/designer/TwitchCon_2017.jpg'), rotation: -4 },
+    { imagePath: assetPath('/polaroid_photos/designer/CLG_Jersey.jpg'), rotation: 2 },
+    { imagePath: assetPath('/polaroid_photos/designer/Fidget_Head.jpg'), rotation: -1 },
+    { imagePath: assetPath('/polaroid_photos/designer/Writing_On_Table.jpg'), rotation: 3 },
   ],
   developer: [
-    { imagePath: useAssetPath('/polaroid_photos/developer/Timbits.jpg'), rotation: -4 },
-    { imagePath: useAssetPath('/polaroid_photos/developer/Agile_team_event.jpg'), rotation: 2 },
-    { imagePath: useAssetPath('/polaroid_photos/developer/SFU.jpg'), rotation: -1 },
-    { imagePath: useAssetPath('/polaroid_photos/developer/Jobreel_Photo.jpg'), rotation: 3 },
+    { imagePath: assetPath('/polaroid_photos/developer/Timbits.jpg'), rotation: -4 },
+    { imagePath: assetPath('/polaroid_photos/developer/Agile_team_event.jpg'), rotation: 2 },
+    { imagePath: assetPath('/polaroid_photos/developer/SFU.jpg'), rotation: -1 },
+    { imagePath: assetPath('/polaroid_photos/developer/Jobreel_Photo.jpg'), rotation: 3 },
   ],
 }
 
-// Computed property to get photos based on current persona and screen size
-const currentPhotos = computed(() => {
-  const photos = photoSets[personaStore.currentPersona] || photoSets.designer
-  // Show only last 3 photos on smaller screens (below md breakpoint)
-  return screenWidth.value < 768 ? photos.slice(-3) : photos
-})
+const currentPhotos = computed(() => photoSets[personaStore.currentPersona])
 </script>
 
 <template>
@@ -71,12 +50,9 @@ const currentPhotos = computed(() => {
           {{ title }}
         </BaseTitle>
 
-        <div
-          class="space-y-4 mx-6 md:mx-0 text-lg leading-relaxed"
-          :style="{ color: personaStore.theme.text }"
-        >
-          <p>{{ description }}</p>
-        </div>
+        <p class="mx-6 max-w-2xl text-lg leading-relaxed text-pretty text-ink-muted md:mx-0">
+          {{ description }}
+        </p>
 
         <!-- Photo Container -->
         <div
@@ -88,6 +64,7 @@ const currentPhotos = computed(() => {
             :image-path="photo.imagePath"
             :rotation="photo.rotation"
             class="shrink-0"
+            :class="{ 'max-md:hidden': index === 0 }"
           />
         </div>
       </div>

@@ -25,23 +25,23 @@ import PersonaGalleryTimeline from '@/components/PersonaGalleryTimeline.vue'
       <BaseTitle class="mb-8">
         Coding Tenets
       </BaseTitle>
-      <div class="container grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+      <div class="grid gap-10 md:grid-cols-2 xl:grid-cols-4">
         <!-- Architecture -->
         <section class="flex flex-col gap-3">
           <BaseSubtitle>
             Architecture
           </BaseSubtitle>
           <ol class="flex flex-col gap-3">
-            <li class="flex items-start gap-2 transition-all hover:translate-x-1 cursor-default">
-              <span class="font-semibold text-primary">01.</span>
+            <li class="flex items-baseline gap-3 text-ink-muted">
+              <span class="font-mono text-sm text-accent">01.</span>
               <span>The developer experience is just as important as the user experience.</span>
             </li>
-            <li class="flex items-start gap-2 transition-all hover:translate-x-1 cursor-default">
-              <span class="font-semibold text-primary">02.</span>
+            <li class="flex items-baseline gap-3 text-ink-muted">
+              <span class="font-mono text-sm text-accent">02.</span>
               <span>Use feature folders.</span>
             </li>
-            <li class="flex items-start gap-2 transition-all hover:translate-x-1 cursor-default">
-              <span class="font-semibold text-primary">03.</span>
+            <li class="flex items-baseline gap-3 text-ink-muted">
+              <span class="font-mono text-sm text-accent">03.</span>
               <span>Separate concerns early, refactor often.</span>
             </li>
           </ol>
@@ -53,16 +53,16 @@ import PersonaGalleryTimeline from '@/components/PersonaGalleryTimeline.vue'
             Design
           </BaseSubtitle>
           <ol class="flex flex-col gap-3">
-            <li class="flex items-start gap-2 transition-all hover:translate-x-1 cursor-default">
-              <span class="font-semibold text-primary">01.</span>
+            <li class="flex items-baseline gap-3 text-ink-muted">
+              <span class="font-mono text-sm text-accent">01.</span>
               <span>Capturing a user's first interaction is crucial.</span>
             </li>
-            <li class="flex items-start gap-2 transition-all hover:translate-x-1 cursor-default">
-              <span class="font-semibold text-primary">02.</span>
+            <li class="flex items-baseline gap-3 text-ink-muted">
+              <span class="font-mono text-sm text-accent">02.</span>
               <span>Favour simplicity over "clever" solutions.</span>
             </li>
-            <li class="flex items-start gap-2 transition-all hover:translate-x-1 cursor-default">
-              <span class="font-semibold text-primary">03.</span>
+            <li class="flex items-baseline gap-3 text-ink-muted">
+              <span class="font-mono text-sm text-accent">03.</span>
               <span>Focus on core design principles.</span>
             </li>
           </ol>
@@ -74,16 +74,16 @@ import PersonaGalleryTimeline from '@/components/PersonaGalleryTimeline.vue'
             Frontend
           </BaseSubtitle>
           <ol class="flex flex-col gap-3">
-            <li class="flex items-start gap-2 transition-all hover:translate-x-1 cursor-default">
-              <span class="font-semibold text-primary">01.</span>
-              <span>Pleasant UX goes a long way</span>
+            <li class="flex items-baseline gap-3 text-ink-muted">
+              <span class="font-mono text-sm text-accent">01.</span>
+              <span>Pleasant UX goes a long way.</span>
             </li>
-            <li class="flex items-start gap-2 transition-all hover:translate-x-1 cursor-default">
-              <span class="font-semibold text-primary">02.</span>
+            <li class="flex items-baseline gap-3 text-ink-muted">
+              <span class="font-mono text-sm text-accent">02.</span>
               <span>Hold one source of truth.</span>
             </li>
-            <li class="flex items-start gap-2 transition-all hover:translate-x-1 cursor-default">
-              <span class="font-semibold text-primary">03.</span>
+            <li class="flex items-baseline gap-3 text-ink-muted">
+              <span class="font-mono text-sm text-accent">03.</span>
               <span>Avoid prop-drilling.</span>
             </li>
           </ol>
@@ -95,16 +95,16 @@ import PersonaGalleryTimeline from '@/components/PersonaGalleryTimeline.vue'
             Backend
           </BaseSubtitle>
           <ol class="flex flex-col gap-3">
-            <li class="flex items-start gap-2 transition-all hover:translate-x-1 cursor-default">
-              <span class="font-semibold text-primary">01.</span>
+            <li class="flex items-baseline gap-3 text-ink-muted">
+              <span class="font-mono text-sm text-accent">01.</span>
               <span>Set up your layers early (MVC).</span>
             </li>
-            <li class="flex items-start gap-2 transition-all hover:translate-x-1 cursor-default">
-              <span class="font-semibold text-primary">02.</span>
+            <li class="flex items-baseline gap-3 text-ink-muted">
+              <span class="font-mono text-sm text-accent">02.</span>
               <span>Performance is a feature, not an afterthought.</span>
             </li>
-            <li class="flex items-start gap-2 transition-all hover:translate-x-1 cursor-default">
-              <span class="font-semibold text-primary">03.</span>
+            <li class="flex items-baseline gap-3 text-ink-muted">
+              <span class="font-mono text-sm text-accent">03.</span>
               <span>Validate at the boundary.</span>
             </li>
           </ol>

@@ -80,72 +80,30 @@ function isEventHighlighted(event: TimelineEvent) {
 </script>
 
 <template>
-  <!-- Timeline -->
-  <div class="relative">
-    <!-- Vertical line -->
-    <div
-      class="absolute top-0 bottom-0 left-3.75 w-0.5 transition-colors duration-500"
-      :style="{ backgroundColor: personaStore.theme.accent }"
-    />
+  <ol class="relative border-l border-line">
+    <li
+      v-for="event in sortedEvents"
+      :key="event.id"
+      class="relative pb-8 pl-6 transition-opacity duration-300 last:pb-0"
+      :class="isEventHighlighted(event) ? 'opacity-100' : 'opacity-35'"
+    >
+      <!-- Marker -->
+      <span
+        class="absolute top-1.5 -left-[5px] size-[9px] rounded-full transition-colors duration-300"
+        :class="isEventHighlighted(event) ? 'bg-accent' : 'bg-line'"
+      />
 
-    <!-- Events -->
-    <div class="space-y-6">
-      <div
-        v-for="event in sortedEvents"
-        :key="event.id"
-        class="relative transition-all duration-300" :class="[
-          isEventHighlighted(event) ? 'pl-16' : 'pl-8',
-        ]"
-      >
-        <!-- Dot -->
-        <div
-          class="absolute top-1.5 left-[0.1rem] size-7 rounded-full border-4 transition-all duration-300"
-          :class="[
-            isEventHighlighted(event)
-              ? 'ring-opacity-30 scale-100 ring-4 hover:scale-110'
-              : 'scale-50',
-          ]"
-          :style="{
-            'backgroundColor': isEventHighlighted(event)
-              ? personaStore.theme.primary
-              : personaStore.theme.accent,
-            'borderColor': '#0a0a0a',
-            '--tw-ring-color': personaStore.theme.accent,
-          }"
-        />
+      <p class="font-mono text-xs text-ink-subtle">
+        {{ event.yearStart }}<span v-if="event.yearEnd">–{{ event.yearEnd }}</span>
+      </p>
 
-        <!-- Content -->
-        <div
-          class="transition-all duration-300"
-          :class="[
-            isEventHighlighted(event)
-              ? 'translate-x-0 scale-100 transform opacity-100'
-              : '-translate-x-6 scale-80 transform opacity-25',
-          ]"
-        >
-          <!-- Year -->
-          <div
-            class="mb-2 font-mono text-xs font-semibold lg:text-sm"
-            :style="{ color: personaStore.theme.accent }"
-          >
-            {{ event.yearStart
-            }}<span v-if="event.yearEnd"><span class="px-1 opacity-40">-</span>{{ event.yearEnd }}</span>
-          </div>
+      <h3 class="mt-1 font-medium text-ink">
+        {{ event.title }}
+      </h3>
 
-          <!-- Title -->
-          <h3
-            class="mb-2 text-lg font-semibold text-gray-100"
-            :class="`font-${personaStore.theme.fontFamily}`"
-          >
-            {{ event.title }}
-          </h3>
-
-          <!-- Description -->
-          <p class="text-sm leading-relaxed text-gray-400">
-            {{ event.description }}
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
+      <p class="mt-1 text-sm leading-relaxed text-ink-muted">
+        {{ event.description }}
+      </p>
+    </li>
+  </ol>
 </template>

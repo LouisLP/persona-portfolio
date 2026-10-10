@@ -33,9 +33,9 @@ function contrastColor(color: string): string {
   <section class="space-y-10">
     <div class="space-y-2">
       <BaseSubtitle>Colour Palette</BaseSubtitle>
-      <p class="text-gray-400 leading-relaxed">
-        These palettes are defined in <code class="text-purple-300">oklch</code>, which separates lightness, chroma, and hue.
-        Unlike HSL, two colours at the same <code class="text-purple-300">L</code> value will
+      <p class="text-ink-muted leading-relaxed">
+        These palettes are defined in <code class="text-accent">oklch</code>, which separates lightness, chroma, and hue.
+        Unlike HSL, two colours at the same <code class="text-accent">L</code> value will
         actually read as the same brightness regardless of hue, which makes building consistent
         scales and accessible contrast ratios much more predictable on web design. Hover any swatch to see
         its value.
@@ -49,10 +49,10 @@ function contrastColor(color: string): string {
         class="space-y-3"
       >
         <div class="flex items-baseline gap-3">
-          <h4 class="text-sm font-semibold uppercase tracking-widest text-gray-500">
+          <h4 class="font-mono text-xs uppercase tracking-wider text-ink-subtle">
             {{ scale.name }}
           </h4>
-          <span class="text-xs text-gray-700">{{ scale.description }}</span>
+          <span class="text-xs text-ink-subtle">{{ scale.description }}</span>
         </div>
 
         <div class="flex gap-1 overflow-hidden rounded-xl">

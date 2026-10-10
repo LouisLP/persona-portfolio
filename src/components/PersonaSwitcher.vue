@@ -1,40 +1,22 @@
 <script setup lang="ts">
-import type { PersonaType } from '@/stores/persona'
-import { useRouter } from 'vue-router'
-import { usePersonaStore } from '@/stores/persona'
-
-const personaStore = usePersonaStore()
-const router = useRouter()
-
-async function switchPersona(persona: PersonaType) {
-  await personaStore.setPersona(persona)
-  router.push(`/${persona}`)
-}
+import { PERSONAS } from '@/stores/persona'
 </script>
 
 <template>
-  <div
-    class="fixed top-8 left-1/2 z-50 -translate-x-1/2 transform lg:right-8 lg:left-auto lg:translate-x-0"
+  <nav
+    aria-label="Persona"
+    class="fixed top-6 left-1/2 z-50 -translate-x-1/2 lg:top-8 lg:right-8 lg:left-auto lg:translate-x-0"
   >
-    <div
-      class="flex gap-2 rounded-full border border-white/10 bg-black/50 p-1.5 backdrop-blur-sm lg:gap-3 lg:p-2"
-    >
-      <button
-        v-for="persona in personaStore.allPersonas"
-        :key="persona.type"
-        class="cursor-pointer rounded-full font-medium transition-all duration-100 hover:scale-105 active:scale-95 px-3 py-2 text-sm lg:px-6 lg:py-3 lg:text-base" :class="[
-          personaStore.currentPersona === persona.type
-            ? 'text-white shadow-lg'
-            : 'text-gray-400 hover:bg-white/5 hover:text-white',
-        ]"
-        :style="personaStore.currentPersona === persona.type
-          ? { backgroundColor: `${personaStore.theme.primary}66` }
-          : {}"
-        @click="switchPersona(persona.type)"
-      >
-        <span class="mr-1 lg:mr-2">{{ persona.icon }}</span>
-        <span>{{ persona.label }}</span>
-      </button>
-    </div>
-  </div>
+    <ul class="flex gap-1 rounded-lg border border-line bg-canvas p-1">
+      <li v-for="persona in PERSONAS" :key="persona">
+        <RouterLink
+          :to="`/${persona}`"
+          class="block rounded-md px-3 py-1.5 text-sm font-medium capitalize text-ink-muted transition-colors duration-200 hover:bg-surface hover:text-ink lg:px-4"
+          exact-active-class="bg-accent! text-canvas!"
+        >
+          {{ persona }}
+        </RouterLink>
+      </li>
+    </ul>
+  </nav>
 </template>
