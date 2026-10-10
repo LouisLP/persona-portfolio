@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import BaseSubtitle from '@/components/Base/BaseSubtitle.vue'
 import { durationTokens } from '@/components/Designer/DesignProcess/designTokens'
-import { usePersonaStore } from '@/stores/persona'
-
-const personaStore = usePersonaStore()
 
 /**
  * Each row showcases one easing curve via a dedicated CSS animation name.
@@ -30,16 +27,16 @@ const easingShowcase = [
   <section class="space-y-10">
     <div class="space-y-2">
       <BaseSubtitle>Motion &amp; Easing</BaseSubtitle>
-      <p class="text-gray-400">
-        Purposeful motion creates personality without distraction. Each curve below
-        loops continuously so you can feel how it moves — not just read about it.
+      <p class="text-ink-muted">
+        Motion should add personality without pulling focus. Each curve below loops, so you
+        can feel how it moves instead of just reading about it.
       </p>
     </div>
 
     <div class="grid gap-12 lg:grid-cols-2">
       <!-- ── Easing Showcase ── -->
       <div class="space-y-4">
-        <h4 class="text-sm font-semibold uppercase tracking-widest text-gray-500">
+        <h4 class="font-mono text-xs uppercase tracking-wider text-ink-subtle">
           Easing Curves
         </h4>
 
@@ -47,19 +44,19 @@ const easingShowcase = [
           <div
             v-for="easing in easingShowcase"
             :key="easing.name"
-            class="rounded-lg border border-white/5 bg-white/2 px-4 py-3 space-y-3"
+            class="rounded-lg border border-line bg-surface px-4 py-3 space-y-3"
           >
             <!-- Label row -->
             <div class="flex items-baseline justify-between gap-4">
               <div>
-                <p class="text-sm font-medium text-white">
+                <p class="text-sm font-medium text-ink">
                   {{ easing.name }}
                 </p>
-                <p class="text-xs text-gray-500">
+                <p class="text-xs text-ink-subtle">
                   {{ easing.description }}
                 </p>
               </div>
-              <code class="hidden shrink-0 text-xs text-gray-600 lg:block">{{ easing.css }}</code>
+              <code class="hidden shrink-0 text-xs text-ink-subtle lg:block">{{ easing.css }}</code>
             </div>
 
             <!-- Track -->
@@ -69,11 +66,10 @@ const easingShowcase = [
               `alternate` direction reverses cleanly; animation-delay offsets the three
               balls so they're never perfectly in sync, which looks more natural.
             -->
-            <div class="relative h-8 overflow-hidden rounded-full bg-white/5">
+            <div class="relative h-8 overflow-hidden rounded-full bg-line/50">
               <div
-                class="absolute top-1 size-6 rounded-full"
+                class="absolute top-1 size-6 rounded-full bg-accent"
                 :class="easing.animationClass"
-                :style="{ backgroundColor: personaStore.theme.primary }"
               />
             </div>
           </div>
@@ -82,7 +78,7 @@ const easingShowcase = [
 
       <!-- ── Duration Tokens ── -->
       <div class="space-y-4">
-        <h4 class="text-sm font-semibold uppercase tracking-widest text-gray-500">
+        <h4 class="font-mono text-xs uppercase tracking-wider text-ink-subtle">
           Duration Tokens
         </h4>
 
@@ -90,41 +86,37 @@ const easingShowcase = [
           <div
             v-for="dur in durationTokens"
             :key="dur.name"
-            class="flex items-center gap-4 rounded-lg border border-white/5 bg-white/2 px-4 py-3"
+            class="flex items-center gap-4 rounded-lg border border-line bg-surface px-4 py-3"
           >
             <div class="flex-1">
-              <p class="text-sm font-medium text-white">
+              <p class="text-sm font-medium text-ink">
                 {{ dur.name }}
               </p>
-              <p class="text-xs text-gray-500">
+              <p class="text-xs text-ink-subtle">
                 {{ dur.label }}
               </p>
             </div>
             <div class="flex items-center gap-3">
-              <!-- Bar length proportional to duration — 500ms maps to ~125px -->
+              <!-- Bar length proportional to duration: 500ms maps to ~125px -->
               <div
-                class="h-2 rounded-full"
-                :style="{
-                  width: `${parseInt(dur.value) / 4}px`,
-                  backgroundColor: personaStore.theme.accent,
-                }"
+                class="h-2 rounded-full bg-accent"
+                :style="{ width: `${parseInt(dur.value) / 4}px` }"
               />
-              <code class="w-14 text-right text-xs text-gray-600">{{ dur.value }}</code>
+              <code class="w-14 text-right text-xs text-ink-subtle">{{ dur.value }}</code>
             </div>
           </div>
         </div>
 
-        <!-- Pulse demo — illustrates the "normal" 300ms token in context -->
+        <!-- Pulse demo, illustrating the "normal" 300ms token in context -->
         <div class="mt-6 space-y-2">
-          <p class="text-xs font-semibold uppercase tracking-widest text-gray-600">
+          <p class="font-mono text-xs uppercase tracking-wider text-ink-subtle">
             Live pulse · 300ms
           </p>
           <div class="flex items-center gap-3">
             <div
-              class="size-3 rounded-full animate-pulse-dot"
-              :style="{ backgroundColor: personaStore.theme.accent }"
+              class="size-3 rounded-full bg-accent animate-pulse-dot"
             />
-            <span class="text-xs text-gray-500">Typical loading / presence indicator</span>
+            <span class="text-xs text-ink-subtle">Typical loading / presence indicator</span>
           </div>
         </div>
       </div>
@@ -135,7 +127,7 @@ const easingShowcase = [
 <style scoped>
 /*
   All three tracks share one keyframe definition. The timing-function is what
-  differs — it's set per class so the perceived character of each curve is clear.
+  differs, set per class so the perceived character of each curve is clear.
   `alternate` reverses at the end of each cycle instead of jumping back to start.
   `both` fill-mode keeps the ball at the `from` position before the first frame.
 */

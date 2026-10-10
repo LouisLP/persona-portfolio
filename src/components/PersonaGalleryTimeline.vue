@@ -71,12 +71,9 @@ const currentPhotos = computed(() => {
           {{ title }}
         </BaseTitle>
 
-        <div
-          class="space-y-4 mx-6 md:mx-0 text-lg leading-relaxed"
-          :style="{ color: personaStore.theme.text }"
-        >
-          <p>{{ description }}</p>
-        </div>
+        <p class="mx-6 max-w-2xl text-lg leading-relaxed text-pretty text-ink-muted md:mx-0">
+          {{ description }}
+        </p>
 
         <!-- Photo Container -->
         <div

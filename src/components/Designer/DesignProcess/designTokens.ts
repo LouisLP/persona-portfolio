@@ -61,7 +61,7 @@ export const colorScales: ColorScale[] = [
   },
   {
     name: 'Semantic',
-    description: 'Status colours — each at oklch L≈60% so they read as equally prominent',
+    description: 'Status colours, each at oklch L≈60% so they read as equally prominent',
     colors: [
       { oklch: 'oklch(60% 0.20 145)' }, // success green
       { oklch: 'oklch(60% 0.18  85)' }, // warning amber

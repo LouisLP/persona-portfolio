@@ -11,11 +11,10 @@ import TypographySection from '@/components/Designer/DesignProcess/TypographySec
     <!-- Intro -->
     <section class="space-y-4">
       <BaseTitle>Design Process</BaseTitle>
-      <p class="text-lg leading-relaxed text-gray-300">
-        Great interfaces start with a well-defined design system. The foundational building blocks
-        usually start as a sketch or on Figma. However, this showcase is a bit of a unique case,
-        so here's a visual representation of the tokens, scales, and principles that go into my
-        design process.
+      <p class="max-w-2xl text-lg leading-relaxed text-pretty text-ink-muted">
+        Good interfaces start with a well-defined design system. Mine usually begin as a sketch or
+        in Figma, but a portfolio can show the real thing, so here are the tokens, scales, and
+        principles I actually work with.
       </p>
     </section>
 

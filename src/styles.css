@@ -1,38 +1,81 @@
 @import 'tailwindcss';
 
-/* Font Face Declarations */
-@font-face {
-  font-family: 'Archivo';
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url('/fonts/Archivo_Black/ArchivoBlack-Regular.ttf') format('truetype');
-}
+@import '@fontsource-variable/instrument-sans';
+@import '@fontsource-variable/bricolage-grotesque';
+@import '@fontsource/instrument-serif/400.css';
+@import '@fontsource/instrument-serif/400-italic.css';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/500.css';
 
-@font-face {
-  font-family: 'Fira Code';
-  font-style: normal;
-  font-weight: 300 700;
-  font-display: swap;
-  src: url('/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Domine';
-  font-style: normal;
-  font-weight: 400 700;
-  font-display: swap;
-  src: url('/fonts/Domine/Domine-VariableFont_wght.ttf') format('truetype');
-}
+/*
+  One system, three personas.
+  Every colour is derived from a single `--hue` so the personas share lightness
+  and chroma and only differ in hue. Each persona also picks a display face;
+  body copy is always the shared sans.
+*/
 
 @theme {
-  --font-designer: 'Archivo', sans-serif;
+  --font-sans: 'Instrument Sans Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --font-developer: 'IBM Plex Mono', ui-monospace, monospace;
+  --font-designer: 'Bricolage Grotesque Variable', ui-sans-serif, sans-serif;
+  --font-editor: 'Instrument Serif', ui-serif, Georgia, serif;
 }
 
-@theme {
-  --font-developer: 'Fira Code', monospace;
+@theme inline {
+  --font-display: var(--persona-font);
+
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-subtle: var(--ink-subtle);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-code-string: var(--code-string);
+  --color-code-number: var(--code-number);
 }
 
-@theme {
-  --font-editor: 'Domine', serif;
+:root {
+  --hue: 250;
+  --persona-font: var(--font-developer);
+
+  --canvas: oklch(16% 0.008 var(--hue));
+  --surface: oklch(20% 0.01 var(--hue));
+  --line: oklch(30% 0.012 var(--hue));
+  --ink: oklch(95% 0.004 var(--hue));
+  --ink-muted: oklch(75% 0.01 var(--hue));
+  --ink-subtle: oklch(58% 0.012 var(--hue));
+  --accent: oklch(74% 0.14 var(--hue));
+  --accent-soft: oklch(74% 0.14 var(--hue) / 0.12);
+
+  --code-string: oklch(80% 0.11 150);
+  --code-number: oklch(82% 0.11 85);
+
+  color-scheme: dark;
+}
+
+:root[data-persona='editor'] {
+  --hue: 28;
+  --persona-font: var(--font-editor);
+}
+
+:root[data-persona='designer'] {
+  --hue: 290;
+  --persona-font: var(--font-designer);
+}
+
+@layer base {
+  body {
+    @apply bg-canvas font-sans text-ink antialiased transition-colors duration-500;
+  }
+
+  ::selection {
+    @apply bg-accent text-canvas;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent;
+  }
 }

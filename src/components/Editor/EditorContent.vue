@@ -2,9 +2,6 @@
 import BaseTitle from '@/components/Base/BaseTitle.vue'
 import PersonaGalleryTimeline from '@/components/PersonaGalleryTimeline.vue'
 import { useAssetPath } from '@/composables/useAssetPath'
-import { usePersonaStore } from '@/stores/persona'
-
-const personaStore = usePersonaStore()
 
 // Motion graphics gallery items
 const motionGraphics = [
@@ -72,28 +69,27 @@ const youtubeVideos = [
         <div
           v-for="item in motionGraphics"
           :key="item.filename"
-          class="group relative overflow-hidden rounded-lg bg-black/50 transition-all duration-100 hover:scale-105 hover:transform"
-          :style="{ borderColor: `${personaStore.theme.accent}30` }"
+          class="group relative overflow-hidden rounded-lg border border-line bg-surface"
         >
           <!-- GIF Container -->
           <div class="relative aspect-video overflow-hidden">
             <img
               :src="useAssetPath(`/motion_graphics_gifs/${item.filename}`)"
               :alt="item.title"
-              class="size-full object-cover transition-transform duration-100 group-hover:scale-105"
+              class="size-full object-cover"
               loading="lazy"
             >
           </div>
 
           <!-- Title overlay on hover -->
           <div
-            class="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            class="absolute inset-0 flex items-center justify-center bg-canvas/85 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
           >
             <div class="p-4 text-center">
-              <h4 class="mb-2 text-lg font-semibold" :style="{ color: personaStore.theme.text }">
+              <h4 class="mb-2 font-display text-lg text-ink">
                 {{ item.title }}
               </h4>
-              <p class="text-sm opacity-90" :style="{ color: personaStore.theme.text }">
+              <p class="text-sm text-ink-muted">
                 {{ item.description }}
               </p>
             </div>
@@ -112,8 +108,7 @@ const youtubeVideos = [
         <div
           v-for="video in youtubeVideos"
           :key="video.videoId"
-          class="group relative overflow-hidden rounded-lg bg-black/50"
-          :style="{ borderColor: `${personaStore.theme.accent}30` }"
+          class="overflow-hidden rounded-lg border border-line bg-surface"
         >
           <!-- YouTube Embed Container -->
           <div class="relative aspect-video overflow-hidden">
@@ -129,11 +124,11 @@ const youtubeVideos = [
           </div>
 
           <!-- Video Info -->
-          <div class="border-t p-4" :style="{ borderColor: `${personaStore.theme.accent}30` }">
-            <h4 class="mb-2 font-semibold" :style="{ color: personaStore.theme.text }">
+          <div class="border-t border-line p-4">
+            <h4 class="mb-1 font-medium text-ink">
               {{ video.title }}
             </h4>
-            <p class="text-sm opacity-75" :style="{ color: personaStore.theme.text }">
+            <p class="text-sm text-ink-muted">
               {{ video.description }}
             </p>
           </div>
@@ -143,11 +138,11 @@ const youtubeVideos = [
 
     <!-- WIP -->
     <section class="py-12 text-center">
-      <p class="text-lg italic opacity-80 md:text-xl">
+      <p class="font-display text-xl text-ink-muted italic md:text-2xl">
         This is a work in progress.
       </p>
-      <p class="text-base italic opacity-40 md:text-lg">
-        More editor content coming soon! Stay tuned.
+      <p class="mt-1 text-ink-subtle">
+        More editing work is on the way.
       </p>
     </section>
   </div>

@@ -21,21 +21,25 @@ watch(
   },
   { immediate: true },
 )
+
+// Theme tokens in styles.css key off this attribute
+watch(
+  () => personaStore.currentPersona,
+  (persona) => {
+    document.documentElement.dataset.persona = persona
+  },
+  { immediate: true },
+)
 </script>
 
 <template>
-  <div
-    class="min-h-screen transition-colors duration-700"
-    :style="{ backgroundColor: personaStore.theme.background, color: personaStore.theme.text }"
-  >
-    <!-- Persona Switcher -->
+  <div class="min-h-screen">
     <PersonaSwitcher />
 
     <router-view v-slot="{ Component }">
       <component :is="Component" />
     </router-view>
 
-    <!-- Footer -->
     <AppFooter />
   </div>
 </template>

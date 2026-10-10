@@ -8,82 +8,32 @@ const personaStore = usePersonaStore()
 </script>
 
 <template>
-  <section
-    class="relative flex min-h-screen items-center justify-center overflow-hidden transition-colors duration-700"
-    :style="{ backgroundColor: personaStore.theme.background }"
-  >
-    <!-- Background gradient -->
-    <div
-      class="absolute inset-0 opacity-20" :class="[`bg-linear-to-br ${personaStore.theme.gradient}`]"
-    />
-
+  <section class="relative flex min-h-svh items-center overflow-hidden">
     <!-- Persona-specific overlays -->
     <DeveloperOverlay v-if="personaStore.currentPersona === 'developer'" />
     <EditorOverlay v-if="personaStore.currentPersona === 'editor'" />
     <DesignerOverlay v-if="personaStore.currentPersona === 'designer'" />
 
-    <!-- Content -->
-    <div class="relative z-10 mx-auto max-w-4xl px-6 text-center">
-      <!-- Persona Title -->
-      <h1
-        :key="personaStore.currentPersona"
-        class="mb-6 text-6xl font-bold transition-all duration-500 md:text-8xl"
-        :style="{ color: personaStore.theme.text }"
-      >
-        Louis the
-        <p
-          :class="[
-            {
-              'font-designer': personaStore.currentPersona === 'designer',
-              'font-developer': personaStore.currentPersona === 'developer',
-              'font-editor': personaStore.currentPersona === 'editor',
-            },
-          ]"
-          class="mx-auto w-fit rounded-2xl px-6 bg-black/90"
-          :style="{ color: personaStore.theme.text }"
+    <div class="relative mx-auto w-full max-w-5xl px-6 pt-24 md:px-16">
+      <h1 class="text-5xl leading-[0.95] font-medium tracking-tight md:text-8xl">
+        <span class="block text-ink-muted">Louis the</span>
+        <span
+          :key="personaStore.currentPersona"
+          class="block font-display text-accent"
         >
           {{ personaStore.personaContent.title }}
-        </p>
+        </span>
       </h1>
 
-      <!-- Description -->
-      <p
-        :key="`${personaStore.currentPersona}-desc`"
-        class="text-md mx-auto mb-12 max-w-2xl opacity-80 md:text-lg"
-        :style="{ color: personaStore.theme.text }"
-      >
+      <p class="mt-8 max-w-xl text-lg text-pretty text-ink-muted md:text-xl">
         {{ personaStore.personaContent.description }}
       </p>
 
-      <!-- Skills showcase -->
-      <div class="mt-16 flex flex-wrap justify-center gap-4">
-        <span
-          v-for="skill in personaStore.personaContent.skills"
-          :key="skill"
-          class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm backdrop-blur-sm"
-          :style="{ color: personaStore.theme.text }"
-        >
+      <ul class="mt-12 flex flex-wrap gap-x-6 gap-y-2 font-mono text-sm text-ink-subtle">
+        <li v-for="skill in personaStore.personaContent.skills" :key="skill">
           {{ skill }}
-        </span>
-      </div>
-    </div>
-
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 transform animate-bounce">
-      <svg
-        class="h-6 w-6"
-        :style="{ color: personaStore.theme.accent }"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M19 14l-7 7m0 0l-7-7m7 7V3"
-        />
-      </svg>
+        </li>
+      </ul>
     </div>
   </section>
 </template>
